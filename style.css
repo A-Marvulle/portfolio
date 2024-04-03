@@ -307,7 +307,6 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    max-width: 980px;
     margin-top: 4rem;
     flex-wrap: wrap;
   }
@@ -327,19 +326,42 @@
   footer {
     font-weight: 300;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     padding: 2rem;
     background: var(--main-gray);
     border-top: 4px solid var(--main-red);
   }
   
-  footer > p {
-    margin: 2rem;
+  @media (max-width: 28.75em) {
+    footer {
+      flex-direction: column;
+      text-align: center;
+    }
   }
-  
-  footer i {
-    vertical-align: middle;
-  }
+
+.cv{
+    display: block;
+    width: 16rem;
+    margin: 1rem;
+}
+
+.cv .btn{
+  border: none;
+  text-align: center;
+  background-color: var(--main-red);
+  color: var(--main-white);
+  padding: 0.75rem;
+  transition: background 0.4s ease-in;
+  width: 20rem;
+}
+
+.cv .btn:hover{
+  background-color: var(--main-blue);
+}
+
+.att{
+    font-size: smaller;
+}
   
   @media (max-width: 28.75em) {
     footer {
