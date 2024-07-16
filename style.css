@@ -23,6 +23,13 @@ html {
   scroll-behavior: smooth;
 }
 
+#projects,
+#freecodecamp,
+#if,
+#me {
+  scroll-margin-top: 75px;
+}
+
 @media (max-width: 75em) {
   html {
     font-size: 60%;
