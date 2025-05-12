@@ -1,238 +1,470 @@
 <!DOCTYPE html>
 <html lang="PT-BR">
-  <head>
+
+<head>
     <meta name="theme-color" content="#9e2a3a">
     <meta charset="UTF-8">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    <title>Home - Alfredo</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap" rel="stylesheet"/>
-  </head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
 
-  <body>
+<body>
     <header>
-      <nav id="navbar" class="nav">
-        <ul class="nav-list">
-          <li>
-            <a href="#welcome-section">Home</a>
-          </li>
-          <li>
-            <a href="https://a-marvulle.github.io/portfolio_about/">Sobre</a>
-          </li>
-          <li>
-            <a>Projetos</a>
-            <ul class="submenu">
-              <li><a href="#freecodecamp">FreeCodeCamp</a></li>
-              <li><a href="#if">IFSP</a></li>
-              <li><a href="#me">Pessoais</a></li>
-            </ul>          
-          </li>
-          <li>
-            <a href="#contact">Contato</a>
-          </li>
-        </ul>
-      </nav>
+        <nav class="navbar navbar-expand-lg nav-bar-dark fixed-top ">
+            <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#intro" title="Introdução"><i class="fa fa-home" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projetos" title="Projetos">Projetos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre" title="Sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato" title="Contato">Contato</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </nav>
     </header>
 
     <main>
-      <section id="welcome-section" class="welcome-section">
-        <h1>Olá, meu nome é Alfredo</h1>
-        <p>sou um desenvolvedor web</p>
-        <h2 class="bases">Base Tecnológica</h2>
-        <div class="grid">
-          <div class="grid-col">
-              <h3>Web</h3>
-              <div class="grid-item">
-                  <div class="icon-container">
-                      <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/JavaScript.svg" class="icon">
-                  </div>
-                  <div class="text-container">
-                      JavaScript
-                  </div>
-              </div>
-              <div class="grid-item">
-                <div class="icon-container">
-                    <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/React-Light.svg" class="icon">
-                </div>
-                <div class="text-container">
-                    React
+        <!-- INTRODUÇÂO -->
+        <section class="intro text-center" id="intro">
+            <div class="container pt-5">
+                <h1 class="h1 pt-5 display-3">Olá, meu nome é Alfredo</h1>
+                <p class="font-italic">sou um desenvolvedor web</p>
+                <h2 class="mb-5">Base Tecnológica</h2>
+                <div class="d-flex flex-column flex-lg-row justify-content-start">
+                    <div class="col-12 col-lg-4">
+                        <h3>Web</h3>
+                        <div class="icon-container d-flex align-items-center justify-content-start m-3">
+                            <img src="./img/icons/js.webp" title="Icon JavaScript" alt="Icon JavaScript">
+                            <div class="m-2">
+                                JavaScript
+                            </div>
+                        </div>
+                        <div class="icon-container d-flex align-items-center justify-content-start m-3">
+                            <img src="./img/icons/php.webp" title="Icon PHP" alt="Icon PHP">
+                            <div class="m-2">
+                                PHP
+                            </div>
+                        </div>
+                        <div class="icon-container d-flex align-items-center justify-content-start m-3">
+                            <img src="./img/icons/bs.webp" title="Icon Bootstrap" alt="Icon Bootstrap">
+                            <div class="m-2">
+                                Bootstrap
+                            </div>
+                        </div>
+                        <div class="icon-container d-flex align-items-center justify-content-start m-3">
+                            <img src="./img/icons/html.webp" title="Icon HTML" alt="Icon HTML">
+                            <div class="m-2">
+                                HTML
+                            </div>
+                        </div>
+                        <div class="icon-container d-flex align-items-center justify-content-start m-3">
+                            <img src="./img/icons/css.webp" title="Icon CSS" alt="Icon CSS">
+                            <div class="m-2">
+                                CSS
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <h3>Mobile</h3>
+                        <div class="icon-container d-flex align-items-center justify-content-start m-3">
+                            <img src="./img/icons/dart.webp" title="Icon Dart" alt="Icon Dart">
+                            <div class="m-2">
+                                Dart
+                            </div>
+                        </div>
+                        <div class="icon-container d-flex align-items-center justify-content-start m-3">
+                            <img src="./img/icons/flutter.webp" title="Icon Flutter" alt="Icon Flutter">
+                            <div class="m-2">
+                                Flutter
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <h3>Banco de Dados</h3>
+                        <div class="icon-container d-flex align-items-center justify-content-start m-3">
+                            <img src="./img/icons/firebase.webp" title="Icon Firebase" alt="Icon Firebase">
+                            <div class="m-2">
+                                Firebase
+                            </div>
+                        </div>
+                        <div class="icon-container d-flex align-items-center justify-content-start m-3">
+                            <img src="./img/icons/sql.webp" title="Icon SQL" alt="Icon SQL">
+                            <div class="m-2">
+                                SQL
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-              <div class="grid-item">
-                  <div class="icon-container">
-                      <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/Bootstrap.svg"
-                      class="icon">                
+        </section>
+
+        <!-- PROJETOS -->
+        <section class="projetos text-center pt-4" id="projetos">
+            <div class="container">
+                <h2 class="text-uppercase text-center p-3">Projetos Freecodecamp</h2>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-6 my-2 my-lg-0 projeto h-100">
+                        <a href="https://a-marvulle.github.io/clock/" target="_blank" title="Projeto Relógio">
+                            <img src="./img/relogio.webp" alt="Mockup do projeto Relógio 25 + 5" loading="lazy" width="450" height="450" > 
+                            <p class="m-0 p-0">
+                                <span class="code">&lt;</span>
+                                Rélogio 25 + 5
+                                <span class="code">&#47;&gt;</span>
+                            </p>
+                        </a> 
+                    </div> 
+                    <div class="col-12 col-lg-6 my-2 my-lg-0 projeto h-100">
+                        <a href="https://a-marvulle.github.io/Tribute-Page/" target="_blank" title="Projeto Tributo">
+                        <img src="./img/tribute.webp" alt="Mockup do projeto Página de Tributo" loading="lazy" width="450" height="450">
+                        <p class="m-0 p-0">
+                            <span class="code">&lt;</span>
+                            Tribute
+                            <span class="code">&#47;&gt;</span>
+                        </p>
+                    </a>
                     </div>
-                  <div class="text-container">
-                      Bootstrap
-                  </div>
-              </div>
-              <div class="grid-item">
-                  <div class="icon-container">
-                      <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/HTML.svg" class="icon">
-                  </div>
-                  <div class="text-container">
-                      HTML
-                  </div>
-              </div>
-              <div class="grid-item">
-                  <div class="icon-container">
-                      <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/CSS.svg" class="icon">
-                  </div>
-                  <div class="text-container">
-                      CSS
-                  </div>
-              </div>
-          </div>
-          <div class="grid-col">
-              <h3>Mobile</h3>
-              <div class="grid-item">
-                  <div class="icon-container">
-                      <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/Dart-Light.svg" class="icon">
-                  </div>
-                  <div class="text-container">
-                      Dart
-                  </div>
-              </div>
-              <div class="grid-item">
-                  <div class="icon-container">
-                      <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/Flutter-Light.svg" class="icon">
-                  </div>
-                  <div class="text-container">
-                      Flutter
-                  </div>
-              </div>
-          </div>
-          <div class="grid-col">
-              <h3>Banco de Dados</h3>
-              <div class="grid-item">
-                  <div class="icon-container">
-                      <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/Firebase-Light.svg" class="icon">
-                  </div>
-                  <div class="text-container">
-                      Firebase
-                  </div>
-              </div>
-              <div class="grid-item">
-                  <div class="icon-container">
-                      <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/MySQL-Light.svg" class="icon">
-                  </div>
-                  <div class="text-container">
-                      SQL
-                  </div>
-              </div>
-          </div>
-      </div>
-      </section>
-  
-      <section id="projects" class="projects-section">
-        <section id="freecodecamp" class="projects-section">
-          <h2 class="projects-section-header">Projetos da FreeCodeCamp</h2>
-          <div class="projects-grid">
-            <a href="https://a-marvulle.github.io/clock/" target="_blank" class="project project-tile">
-              <img class="project-image" src="./img/relogio.png" alt="Mockup do projeto Relógio 25 + 5"/> 
-              <p class="project-title">
-                <span class="code">&lt;</span>
-                Rélogio 25 + 5
-                <span class="code">&#47;&gt;</span>
-              </p>
-            </a>  
-            <a href="https://a-marvulle.github.io/Tribute-Page/" target="_blank" class="project project-tile">
-              <img class="project-image" src="./img/tribute.png" alt="Mockup do projeto Página de Tributo"/>
-              <p class="project-title">
-                <span class="code">&lt;</span>
-                Tribute
-                <span class="code">&#47;&gt;</span>
-              </p>
-            </a>
-          </div>
-          <a href="https://github.com/stars/A-Marvulle/lists/freecodecamp" class="btn btn-show-all" target="_blank">
-            Mostrar Mais<i class="fas fa-chevron-right"></i>
-          </a>
-        </section>
-        
-        <section id="if" class="projects-section">
-          <h2 class="projects-section-header">Projetos do IFSP</h2>
-          <div class="projects-grid">
-            <a href="https://dartpad.dev/?id=badd784d594f90997b21a0d69b327626" target="_blank" class="project project-tile">
-              <img class="project-image" src="./img/nivel.png" alt="Mockup do projeto Aumento de Nível"/>
-              <p class="project-title">
-                <span class="code">&lt;</span>
-                  Aumento de Nível
-                <span class="code">&#47;&gt;</span>
-              </p>
-            </a>  
-            <a href="https://dartpad.dev/?id=7edda99980ffb4ba17c74cc8d5683a31" target="_blank" class="project project-tile">
-              <img class="project-image" src="./img/stpper.png" alt="Mockup do projeto Formulário em Stepper"/>
-              <p class="project-title">
-                <span class="code">&lt;</span>
-                  Formulário Stepper
-                <span class="code">&#47;&gt;</span>
-              </p>
-            </a>
-          </div>
-          <a href="https://github.com/stars/A-Marvulle/lists/ifsp" class="btn btn-show-all" target="_blank">
-            Mostrar Mais<i class="fas fa-chevron-right"></i>
-          </a>
+                    <a href="https://github.com/stars/A-Marvulle/lists/freecodecamp" class="btn btn-dark m-5" target="_blank" title="Ver Mais Projetos FreeCodeCamp">
+                        Mostrar Mais
+                    </a>
+                </div>
+            </div>
+
+            <div class="container pt-1" id="projetos">
+                <hr class="divisao">
+                <h2 class="text-uppercase text-center p-3">Projetos IFSP</h2>
+                <div class="row justify-content-center" id="ifsp">
+                    <div class="col-12 col-lg-6 my-2 my-lg-0 projeto h-100">
+                        <a href="https://dartpad.dev/?id=badd784d594f90997b21a0d69b327626" target="_blank" title="Aumento de Nível">
+                            <img src="./img/nivel.webp" alt="Mockup do projeto Aumento de Nível" loading="lazy" width="450" height="450">  
+                            <p class="m-0 p-0">
+                                <span class="code">&lt;</span>
+                                Aumento de Nível
+                                <span class="code">&#47;&gt;</span>
+                            </p>
+                        </a> 
+                    </div> 
+                    <div class="col-12 col-lg-6 my-2 my-lg-0 projeto h-100">
+                        <a href="https://dartpad.dev/?id=7edda99980ffb4ba17c74cc8d5683a31" target="_blank" title="Projeto Formulário Stepper">
+                        <img src="./img/stpper.webp" alt="Mockup do projeto Formulário em Stepper" loading="lazy" width="450" height="450">
+                        <p class="m-0 p-0">
+                            <span class="code">&lt;</span>
+                            Tribute
+                            <span class="code">&#47;&gt;</span>
+                        </p>
+                    </a>
+                    </div>
+                    <a href="https://github.com/stars/A-Marvulle/lists/ifsp" class="btn btn-dark m-5" target="_blank" title="Ver Mais Projetos IFSP">
+                        Mostrar Mais
+                    </a>
+                </div>
+            </div>
+
+            <div class="container pt-1" id="pessoais">
+                <hr class="divisao">
+                <h2 class="text-uppercase text-center p-3">Projetos Pessoais</h2>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-6 my-2 my-lg-0 projeto h-100">
+                        <a href="https://a-marvulle.github.io/conversor/" target="_blank" title="Conversor de Número Binário">
+                            <img src="./img/bina.webp" alt="Mockup do projeto Conversor de Número Binário" loading="lazy"> 
+                            <p class="m-0 p-0">
+                                <span class="code">&lt;</span>
+                                Conversor Binário
+                                <span class="code">&#47;&gt;</span>
+                            </p>
+                        </a> 
+                    </div> 
+                    <div class="col-12 col-lg-6 my-2 my-lg-0 projeto h-100">
+                        <a href="https://a-marvulle.github.io/qrcodegenerator/" target="_blank" title="Gerador de QRCode">
+                        <img src="./img/qrcode.webp" alt="Mockup do projeto Gerador de QRCode" loading="lazy" width="450" height="450">
+                        <p class="m-0 p-0">
+                            <span class="code">&lt;</span>
+                            Gerador de QRCode
+                            <span class="code">&#47;&gt;</span>
+                        </p>
+                    </a>
+                    </div>
+                    <a href="https://github.com/A-Marvulle?tab=stars" class="btn btn-dark m-5" target="_blank" title="Ver Mais Projetos">
+                        Mostrar Mais
+                    </a>
+                </div>
+            </div>
+            
         </section>
 
-        <section id="me" class="projects-section">
-          <h2 class="projects-section-header">Projetos pessoais</h2>
-          <div class="projects-grid">
-            <a href="https://a-marvulle.github.io/conversor/" target="_blank" class="project project-tile">
-              <img class="project-image" src="./img/bina.png" alt="Mockup do projeto Conversor de Número Binário"/>
-              <p class="project-title">
-                <span class="code">&lt;</span>
-                  Conversor Binário
-                <span class="code">&#47;&gt;</span>
-              </p>
-            </a>
-            <a href="https://a-marvulle.github.io/qrcodegenerator/" target="_blank" class="project project-tile">
-              <img class="project-image" src="./img/qrcode.png" alt="Mockup do projeto Gerador de QRCode"/>
-              <p class="project-title">
-                <span class="code">&lt;</span>
-                  Gerador de QRCode
-                <span class="code">&#47;&gt;</span>
-              </p>
-            </a>   
-          </div>
-          <a href="https://github.com/A-Marvulle?tab=stars" class="btn btn-show-all" target="_blank">
-              Mostrar Mais<i class="fas fa-chevron-right"></i>
-          </a>
+        <!-- SOBRE -->
+        <section class="sobre" id="sobre">
+            <div class="container formacao">
+                <h2 class="text-center text-uppercase pt-5">Formação</h2>
+                <div class="d-flex flex-column justify-content-center">
+                    <div class="card card-custom p-3">
+                        <div class="d-flex flex-column flex-md-row align-items-center">
+                            <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
+                                <img src="./img/sobre/cps.webp" class="card-img-top" alt="Logo Centro Paula Souza" title="Logo Centro Paula Souza" width="160" height="160">
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <div class="card-body">
+                                    <h3 class="card-title">Etec Raposo</h3>
+                                    <p class="card-text">Técnico de Informática Integrado ao Ensino Médio</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-custom p-3">
+                        <div class="row">
+                            <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
+                                <img src="./img/sobre/if.webp" class="card-img-top" alt="Logo IFSP Pirituba" title="Logo IFSP Pirituba" width="160" height="160">
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <div class="card-body">
+                                    <h3 class="card-title">IFSP Pirituba</h3>
+                                    <p class="card-text">Tecnologia em Análise e Desenvolvimento de Sistemas</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-custom p-3">
+                        <div class="row">
+                            <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
+                                <img src="./img/sobre/senac.webp" class="card-img-top" alt="Logo Senac" title="Logo Senac" width="160" height="160">
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <div class="card-body">
+                                    <h3 class="card-title">Senac</h3>
+                                    <p class="card-text">Pós Graduação em Engenharia da Qualidade de Software</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container empregos">
+                <hr class="divisao">
+                <h2 class="text-center text-uppercase">Experiência Profissional</h2>
+                <div class="d-flex flex-column justify-content-center">
+                    <div class="card card-custom">
+                        <div class="row">
+                            <div class="col-12 col-md-4 d-flex justify-content-center justify-content-lg-end align-items-center">
+                            <img src="./img/sobre/moreno.webp" class="card-img" alt="Logo Moreno Advogados" title="Logo Moreno Advogados" width="160" height="160">
+                            </div>
+                            <div class="col-md-8 ps-3">
+                            <div class="card-body">
+                                <h3 class="card-title">Moreno Advogados</h3>
+                                <p class="card-text m-0 p-0 font-italic">Estágio</p>
+                                <p class="card-text">Manutenção do site (lowcode), suporte técnico aos colaboradores e alimentação do banco de dados interno.</p>
+                                <p class="card-text">
+                                    <a href="http://www.morenoadvogados.com.br/" target="_blank" title="Site Moreno" class="btn btn-info m-0">Site</a>
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-custom">
+                        <div class="row">
+                            <div class="col-12 col-md-4 d-flex justify-content-center justify-content-lg-end align-items-center">
+                            <img src="./img/sobre/im.webp" class="card-img" alt="Logo Instiuto Morgan" title="Logo Instiuto Morgan" width="160" height="160">
+                            </div>
+                            <div class="col-md-8 ps-3">
+                            <div class="card-body">
+                                <h3 class="card-title">Instituto Morgan</h3>
+                                <p class="card-text m-0 p-0 font-italic">Técnico de Suporte Júnior</p>
+                                <p class="card-text">Suporte aos colaboradores, Social Media e apoio a equipe de Comunicação.</p>
+                                <p class="card-text">
+                                    <a href="https://www.instagram.com/institutomorgan/" target="_blank" title="Instagram Instituto" class="btn btn-info m-0">Instagram</a>
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-custom">
+                        <div class="row">
+                            <div class="col-12 col-md-4 d-flex justify-content-center justify-content-lg-end align-items-center">
+                            <img src="./img/sobre/aceda.webp" class="card-img" alt="Logo ACEDA" title="Logo ACEDA" width="160" height="160">
+                            </div>
+                            <div class="col-md-8 ps-3">
+                            <div class="card-body">
+                                <h3 class="card-title">ACEDA</h3>
+                                <p class="card-text m-0 p-0 font-italic">Web Designer</p>
+                                <p class="card-text">Criação de arte para mídias sociais e Desenvolvimento do Site com PHP e Bootstrap</p>
+                                <p class="card-text">
+                                    <a href="https://aceda.sampa.br/" target="_blank" title="Site Aceda" class="btn btn-info m-0">Site</a>
+                                    <a href="https://www.instagram.com/aceda.sampa/" target="_blank" title="Instagram Aceda" class="btn btn-info m-0">Instagram</a>
+                                    <a href="./documents/recomendacao.pdf" target="_blank" title="Carta de Recomendação" class="btn btn-info m-0">Recomendação</a>
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-custom">
+                        <div class="row">
+                            <div class="col-12 col-md-4 d-flex justify-content-center justify-content-lg-end align-items-center">
+                            <img src="./img/sobre/git.webp" class="card-img" alt="Logo Grupo Ideal Trends" title="Logo Grupo Ideal Trends" width="160" height="160">
+                            </div>
+                            <div class="col-md-8 ps-3">
+                            <div class="card-body">
+                                <h3 class="card-title">Grupo Ideal Trends</h3>
+                                <p class="card-text m-0 p-0 font-italic">Front-End Junior</p>
+                                <p class="card-text">Criação de sites com PHP, JavaScript e Bootstrap focados em SEO.</p>
+                                <p class="card-text">
+                                    <a href="https://idealtrends.com.br/" target="_blank" title="Site Grupo Ideal Trends" class="btn btn-info m-0">Site GIT</a>
+                                    <a href="https://www.doutoresdaweb.com.br/" target="_blank" title="Site Doutores da Web" class="btn btn-info m-0">Site Doutores</a>
+                                </p>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="container cursos">
+                <hr class="divisao">
+                <h2 class="text-center text-uppercase pt-5">Cursos</h2>
+                <div class="d-flex flex-column justify-content-center">
+                    <div class="card card-custom p-3">
+                        <div class="row">
+                            <div class="col-12 col-md-4 d-flex justify-content-center justify-content-lg-end align-items-center">
+                                <img src="./img/sobre/alura.webp" class="card-img-top" alt="Logo Centro Paula Souza" title="Logo Centro Paula Souza" width="160" height="160">
+                            </div>
+                            <div class="col-md-8 ps-3">
+                                <div class="card-body">
+                                    <h3 class="card-title">Alura</h3>
+                                    <p class="card-text">Front-End</p>
+                                    <p class="card-text conteudo">
+                                        <span>Html</span>
+                                        <span>CSS</span>
+                                        <span>Bootstrap</span>
+                                        <span>Javascript</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-custom p-3">
+                        <div class="row">
+                            <div class="col-12 col-md-4 d-flex justify-content-center justify-content-lg-end align-items-center">
+                                <img src="./img/sobre/fcc.webp" class="card-img-top" alt="Logo Centro Paula Souza" title="Logo Centro Paula Souza" width="160" height="160">
+                            </div>
+                            <div class="col-md-8 ps-3">
+                                <div class="card-body">
+                                    <h3 class="card-title">FreeCodeCamp</h3>
+                                    <p class="card-text">Responsive Web Design</p>
+                                    <p class="card-text conteudo">
+                                        <span>Html</span>
+                                        <span>CSS</span>
+                                        <span>Bootstrap</span>
+                                        <span>Responsividade</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-custom p-3">
+                        <div class="row">
+                            <div class="col-12 col-md-4 d-flex justify-content-center justify-content-lg-end align-items-center">
+                                <img src="./img/sobre/mirago.webp" class="card-img-top" alt="Logo Centro Paula Souza" title="Logo Centro Paula Souza" width="160" height="160">
+                            </div>
+                            <div class="col-md-8 ps-3">
+                                <div class="card-body">
+                                    <h3 class="card-title">Mirago</h3>
+                                    <p class="card-text">Seo para Iniciantes</p>
+                                    <p class="card-text conteudo">
+                                        <span>SEO</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-custom p-3">
+                        <div class="row">
+                            <div class="col-12 col-md-4 d-flex justify-content-center justify-content-lg-end align-items-center">
+                                <img src="./img/sobre/fiap.webp" class="card-img-top" alt="Logo Centro Paula Souza" title="Logo Centro Paula Souza" width="160" height="160">
+                            </div>
+                            <div class="col-md-8 ps-3">
+                                <div class="card-body">
+                                    <h3 class="card-title">FIAP</h3>
+                                    <p class="card-text">User Experience</p>
+                                    <p class="card-text conteudo">
+                                        <span>UI</span>
+                                        <span>UX</span>
+                                        <span>Design</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="https://www.linkedin.com/in/alfredoperesmarvulle-87920a1b7/details/certifications/" class="btn btn-info" title="Todas as Certificações" target="_blank">Saiba Mais</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container curriculo text-center">
+                <hr class="divisao">
+                <h2 class=" text-uppercase">Currículo</h2>
+                <iframe class="d-none d-lg-block m-auto" src="documents/cv-ptbr.pdf" width="600px" height="250px" title="Currículo"></iframe>
+                <div class="p-3">
+                    <a href="./documents/cv-ptbr.pdf" target="_blank" title="Currículo" class="btn btn-info m-0">Baixar Currículo</a>
+                    <a href="./documents/cv-eng.pdf" target="_blank" title="CV - English" class="btn btn-info m-0">Download Curriculum</a>
+                </div>
+
+            </div>
         </section>
-
-      </section>
-
-      <section id="contact" class="contact-section">
-        <div class="contact-section-header">
-          <h2>Contato</h2>
-        </div>
-        <div class="contact-links">
-          <a id="profile-link" href="https://github.com/A-Marvulle" target="_blank" class="btn contact-details">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-          <a href="mailto:alfredo.marvulle@gmail.com" class="btn contact-details">
-            <i class="fas fa-at"></i> alfredo.marvulle@gmail.com
-          </a>
-          <a href="https://www.linkedin.com/in/alfredoperesmarvulle-87920a1b7/" class="btn contact-details">
-            <i class="fab fa-linkedin"></i> LinkedIn
-          </a>
-          <a href="https://api.whatsapp.com/send/?phone=5511976007382&text=&type=phone_number&app_absent=0" class="btn contact-details">
-            <i class="fab fa-whatsapp"></i> +55 11 976007382
-          </a>
-        </div>
-      </section>
-
     </main>
 
-    <footer>
-      <div class="cv">
-        <a href="./documents/cvAlfredo.pdf" class="btn" download>Baixar Curriculo <i class="fa fa-download"></i></a>
-        <span class="att">Ultima Atualização: 13/09/2024</span>
-      </div>
-    </footer>
+    <footer class="pt-5">
+        <div class="container" id="contato">
+        <h2 class="text-center text-uppercase p-3">Contato</h2>
+        <div class="d-flex flex-column align-items-center">
+                <a href="https://github.com/A-Marvulle" target="_blank" class="btn btn-info btn-ctt" title="GitHub">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="mailto:alfredo.marvulle@gmail.com" class="btn btn-info btn-ctt" title="GitHub">
+                    <i class="fas fa-at"></i> alfredo.marvulle@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/alfredoperesmarvulle-87920a1b7/" class="btn btn-info btn-ctt" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://api.whatsapp.com/send/?phone=5511976007382&text=&type=phone_number&app_absent=0" class="btn btn-info btn-ctt" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i> +55 11 976007382
+                </a>
+        </div>
 
-  </body>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
