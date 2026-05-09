@@ -1,12 +1,14 @@
+import '@fortawesome/fontawesome-free/css/all.min.css';
 const skills = [
-    { img: 'logo-js', name: 'JavaScript' },
-    { img: 'logo-ts', name: 'TypeScript' },
-    { img: 'logo-vue', name: 'Vue' },
-    { img: 'logo-nuxt', name: 'Nuxt' },
-    { img: 'logo-php', name: 'PHP' },
-    { img: 'logo-bootstrap', name: 'Bootstrap' },
-    { img: 'logo-tailwind', name: 'Tailwind' },
-    { img: 'logo-sql', name: 'MySql' },
+    { icon: 'fa-brands fa-js', name: 'JavaScript', color: '#f7df1e'},
+    { icon: 'fa-brands fa-typescript', name: 'TypeScript', color: '#3178C6' },
+    { icon: 'fa-brands fa-vuejs', name: 'Vue / Nuxt', color: '#41B883' },
+    // { icon: '', name: 'Nuxt' },
+    { icon: 'fa-brands fa-php', name: 'PHP', color: '#474a8a' },
+    { icon: 'fa-brands fa-bootstrap', name: 'Bootstrap', color: '#553C7B' },
+    { icon: 'fa-brands fa-tailwind-css', name: 'Tailwind', color: '#06B6D4' },
+    { icon: 'fa-brands fa-postgresql', name: 'MySql e Postgres', color: '#F29111' },
+    { icon: 'fa-brands fa-docker', name: 'Docker', color: '#0db7ed' },
 ];
 
 const projects = [
@@ -70,13 +72,13 @@ class BaseComponent {
 
 class SkillsComponent extends BaseComponent {
     renderItem(item) {
-        const card = this.createCard();
+        const card = this.createCard('card__skills');
         const content = this.createContent();
 
         content.innerHTML = `
-            <div>
-                <img src="./src/assets/skills/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" width="150" height="150" />
-                ${item.name}
+            <div class="relative z-1 overflow-hidden w-[60%] bg-opacity-50 flex gap-3 items-center justify-start p-3 rounded-2xl" style="--item-color: ${item.color}">
+              <i class="${item.icon} text-[40px]" style="color: ${item.color}"></i>
+              <h3>${item.name}</h3>
             </div>
         `;
 

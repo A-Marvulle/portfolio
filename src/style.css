@@ -1,1 +1,35 @@
 @import "tailwindcss";
+
+@layer components {
+  .card__skills .card__content {@apply flex flex-col gap-3 md:flex-row justify-center items-center}
+}
+
+.card__skills .card__content>div:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-radius: inherit;
+  height: 100%;
+  border: 2px solid var(--item-color);
+  animation: clippath 3s infinite linear;
+
+}
+
+@keyframes clippath {
+    0%,
+    100% {
+        clip-path: inset(0 0 95% 0);
+    }
+    25% {
+        clip-path: inset(0 95% 0 0);
+    }
+    50% {
+        clip-path: inset(95% 0 0 0);
+    }
+    75% {
+        clip-path: inset(0 0 0 95%);
+    }
+}
+

@@ -8,19 +8,22 @@
     <title>Portfolio</title>
     <link href="./src/style.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
 </head>
 
 <body>
     <header>
 
     </header>
-    <main class="container mx-auto">
-        <section class="py-5">
-            <h1>Olá! Meu nome é Alfredo</h1>
-            <p>Sou um desenvolvedor Front-End</p>
-            <div class="flex" id="skills"></div>
+    <main>
+        <section class="py-5 text-center bg-[linear-gradient(62deg,#3a3d40_0%,#181719_100%)] text-white h-175">
+            <div class="container mx-auto h-full  flex flex-col justify-around items-center">
+                <div class="">
+                    <h1 class="text-[72px]">Olá! Meu nome é Alfredo</h1>
+                    <p class="text-3xl italic text-[#9e2a3a]">Sou um desenvolvedor Front-End</p>
+                </div>
+                <h2 class="text-center text-3xl">Base Tecnológica</h2>
+                <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3" id="skills"></div>
+            </div>
         </section>
         <section class="py-5">
             <div id="projects"></div>
