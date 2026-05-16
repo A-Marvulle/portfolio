@@ -12,9 +12,9 @@ const skills = [
 ];
 
 const projects = [
-    { img: 'tcc', inst: 'IFSP', name: 'TCC', link: 'https://github.com/A-Marvulle/readnplay', stack: ['Flutter', 'Dart', 'FluterFlow', 'Firebase'], desc: 'Trabalho de conclusão de curso do IFSP' },
-    { img: 'doutores', inst: 'Grupo Ideal Trends', name: 'Teste Técnico', link: 'https://a-marvulle.github.io/testegitanalista/', stack: ['HTML', 'CSS', 'JavaScript'], desc: 'Teste técnico aprovado' },
-    { img: 'pmt', inst: 'Pinta Mundi Tintas Jaguaré', name: 'Landing Page', link: 'https://pintamunditintasjaguare.com.br/', stack: ['PHP', 'Bootstrap', 'MySql'], desc: 'Landing Page criada para comércio familiar' },
+    { img: 'tcc', inst: 'IFSP', name: 'TCC', link: 'https://github.com/A-Marvulle/readnplay', stack: ['Flutter', 'Dart', 'FluterFlow', 'Firebase'], desc: 'Trabalho de Conclusão de Curso do IFSP. Esse projeto desenvolvido em grupo, teve como objetivo criar um aplicativo mobile que incentivasse em jovens o hábito de ler.' },
+    { img: 'doutores', inst: 'Grupo Ideal Trends', name: 'Teste Técnico', link: 'https://a-marvulle.github.io/testegitanalista/', stack: ['HTML', 'CSS', 'JavaScript'], desc: 'Teste técnico aprovado para a empresa Doutores da Web do Grupo Ideal Trends. O teste consistia em replicar um mockup com um tema livre.' },
+    { img: 'pmt', inst: 'Pinta Mundi Tintas Jaguaré', name: 'Landing Page', link: 'https://pintamunditintasjaguare.com.br/', stack: ['PHP', 'Bootstrap', 'MySql'], desc: 'Landing Page criada para comércio familiar.' },
 ];
 
 const work = [
@@ -89,20 +89,25 @@ class SkillsComponent extends BaseComponent {
 
 class ProjectComponent extends BaseComponent {
     renderItem(item) {
-        const card = this.createCard();
-        const content = this.createContent();
+        const card = this.createCard('card__project focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#9e2a3e]');
+        const content = this.createContent('card__content h-full p-6');
         const stackHTML = item.stack.map(tech => `<span class="badge">${tech}</span>`).join('');
 
         content.innerHTML = `
-            <div>
-                <a href="${item.link}" title="${item.name}" target="_blank" rel="noopener noreferrer">
-                    <img src="./src/assets/projects/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" />
-                    <h2>${item.name}</h2>
+              <a class="flex flex-col gap-3 h-full items-center lg:items-start focus:outline-none" href="${item.link}" title="${item.name}" target="_blank" rel="noopener noreferrer">
+                <div class="card__project-img">
+                  <img class="aspect-1/1 object-cover" src="./src/assets/projects/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" />
+                </div>
+                <div class="card__project-info flex flex-col justify-around h-full">
+                  <h2 class="text-3xl text-[#9e1a3e] font-bold">${item.name}</h2>
                     <p>${item.inst}</p>
                     <p>${item.desc}</p>
-                    <div class="stack">${stackHTML}</div>
-                </a>
-            </div>
+                  <div class="stack flex flex-wrap gap-5 mt-6 justify-center lg:justify-start">
+                    ${stackHTML}
+                  </div>
+                </div>
+               </a>
+              <span class="icon-hover absolute right-0 top-0 me-6 mt-6"><i class="fa-solid fa-code fa-2xl text-[#9e2a3e]"></i></span>
         `;
 
         card.appendChild(content);
