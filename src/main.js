@@ -296,14 +296,18 @@ class WorkComponent extends BaseComponent {
 
 class EducationComponent extends BaseComponent {
     renderItem(item) {
-        const card = this.createCard();
+        const card = this.createCard('card__education w-150 mx-auto border-y-1 border-[#333] my-8 p-3');
         const content = this.createContent();
 
         content.innerHTML = `
-            <div>
-                <img src="./src/assets/education/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" width="150" height="150" />
-                <h2>${item.name}</h2>
-                <p>${item.course}</p>
+            <div class="flex items-center gap-4">
+                <div class="bg-white rounded-full">
+                    <img src="./src/assets/education/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" width="150" height="150" />
+                </div>
+                <div>
+                    <h2 class="text-bold text-xl">${item.name}</h2>
+                    <p>${item.course}</p>
+                </div>
             </div>
         `;
 

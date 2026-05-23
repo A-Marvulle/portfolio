@@ -6,6 +6,7 @@
   .card__project .card__project-img {@apply w-90 h-90}
   .badge {@apply inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs bg-[#9e2a3a]}
   .button {@apply inline-flex items-center gap-x-1.5 py-3 px-6 rounded-[12px] text-[18px] bg-transparent transition duration-300 ease-in-out border border-[#e3e3e3] hover:bg-[#9e2a3e] focus-within:bg-[#9e2a3e] focus-within:border-none focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#9e2a3e]}
+  .title {@apply  text-center text-3xl my-5 uppercase tracking-[1.6px]}
 }
 body {background: #303841; color: #f0f0f0}
 .card__skills .card__content>div:before {content: '';position: absolute;  left: 0;  right: 0;  width: 100%;  border-radius: inherit;  height: 100%;  border: 2px solid var(--item-color);  animation: clippath 3s infinite linear;}
