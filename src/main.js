@@ -318,12 +318,13 @@ class EducationComponent extends BaseComponent {
 
 class PersonalInfoComponent extends BaseComponent {
     renderItem(item) {
-        const card = this.createCard();
+        const card = this.createCard('card__info w-100 mx-auto my-7 bg-[#9e2a3a] p-4 rounded-full transition duration-300 ease-in-out hover:outline-2 hover:outline-offset-2 hover:outline-[#9e2a3e] focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#9e2a3e] relative');
         const content = this.createContent();
 
         content.innerHTML = `
-            <a href="${item.link}" target="_blank" rel="noopener noreferrer">
-                <i class="${item.icon}" aria-hidden="true"></i> ${item.name}
+            <a class="flex gap-3 items-center focus-within:outline-none w-full h-full after:absolute after:inset-0" href="${item.link}" target="_blank" rel="noopener noreferrer">
+                <i class="${item.icon} text-2xl" aria-hidden="true"></i> 
+                <p>${item.name}</p>
             </a>
         `;
 
