@@ -245,7 +245,7 @@ class ProjectComponent extends BaseComponent {
         content.innerHTML = `
               <a class="flex flex-col gap-3 h-full items-center lg:items-start focus:outline-none" href="${item.link}" title="${item.name}" target="_blank" rel="noopener noreferrer">
                 <div class="card__project-img">
-                  <img class="aspect-square object-cover" src="./src/assets/projects/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" />
+                  <img class="aspect-square object-cover" src="portfolio/images/projects/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" />
                 </div>
                 <div class="card__project-info flex flex-col justify-around h-full">
                   <h2 class="text-3xl text-[#9e1a3e] font-bold">${item.name}</h2>
@@ -274,7 +274,7 @@ class WorkComponent extends BaseComponent {
         content.innerHTML = `
             <div class="flex flex-col lg:flex-row items-center lg:items-start gap-3">
                 <div class="w-30 min-w-30 h-30">
-                    <img class="w-full h-full rounded-2xl aspect-square object-cover" src="./src/assets/work/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" width="150" height="150" />
+                    <img class="w-full h-full rounded-2xl aspect-square object-cover" src="portfolio/images/work/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" width="150" height="150" />
                 </div>
               <div>
                 <h2 class="my-4 text-[24px] font-bold">${item.name} <span class="block font-light text-lg italic">${item.ocupation}</span> </h2>
@@ -302,7 +302,7 @@ class EducationComponent extends BaseComponent {
         content.innerHTML = `
             <div class="flex flex-col lg:flex-row items-center gap-4">
                 <div class="bg-white rounded-full">
-                    <img src="./src/assets/education/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" width="150" height="150" />
+                    <img src="portfolio/images/education/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" width="150" height="150" />
                 </div>
                 <div>
                     <h2 class="text-bold text-xl">${item.name}</h2>
