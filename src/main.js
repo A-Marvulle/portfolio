@@ -1,6 +1,6 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 const skills = [
-    { icon: 'fa-brands fa-js', name: 'JavaScript', color: '#f7df1e'},
+    { icon: 'fa-brands fa-js', name: 'JavaScript', color: '#f7df1e' },
     { icon: 'fa-brands fa-typescript', name: 'TypeScript', color: '#3178C6' },
     { icon: 'fa-brands fa-vuejs', name: 'Vue / Nuxt', color: '#41B883' },
     // { icon: '', name: 'Nuxt' },
@@ -12,23 +12,172 @@ const skills = [
 ];
 
 const projects = [
-    { img: 'tcc', inst: 'IFSP', name: 'TCC', link: 'https://github.com/A-Marvulle/readnplay', stack: ['Flutter', 'Dart', 'FluterFlow', 'Firebase'], desc: 'Trabalho de Conclusão de Curso do IFSP. Esse projeto desenvolvido em grupo, teve como objetivo criar um aplicativo mobile que incentivasse em jovens o hábito de ler.' },
-    { img: 'doutores', inst: 'Grupo Ideal Trends', name: 'Teste Técnico', link: 'https://a-marvulle.github.io/testegitanalista/', stack: ['HTML', 'CSS', 'JavaScript'], desc: 'Teste técnico aprovado para a empresa Doutores da Web do Grupo Ideal Trends. O teste consistia em replicar um mockup com um tema livre.' },
-    { img: 'pmt', inst: 'Pinta Mundi Tintas Jaguaré', name: 'Landing Page', link: 'https://pintamunditintasjaguare.com.br/', stack: ['PHP', 'Bootstrap', 'MySql'], desc: 'Landing Page criada para comércio familiar.' },
+    {
+        img: 'tcc',
+        inst: 'IFSP',
+        name: 'TCC',
+        link: 'https://github.com/A-Marvulle/readnplay',
+        stack: [
+            'Flutter',
+            'Dart',
+            'FluterFlow',
+            'Firebase'
+        ],
+        desc: 'Trabalho de Conclusão de Curso do IFSP. Esse projeto desenvolvido em grupo, teve como objetivo criar um aplicativo mobile que incentivasse em jovens o hábito de ler.'
+    },
+    {
+        img: 'doutores',
+        inst: 'Grupo Ideal Trends',
+        name: 'Teste Técnico',
+        link: 'https://a-marvulle.github.io/testegitanalista/',
+        stack: [
+            'HTML',
+            'CSS',
+            'JavaScript'
+        ],
+        desc: 'Teste técnico aprovado para a empresa Doutores da Web do Grupo Ideal Trends. O teste consistia em replicar um mockup com um tema livre.'
+    },
+    {
+        img: 'pmt',
+        inst: 'Pinta Mundi Tintas Jaguaré',
+        name: 'Landing Page',
+        link: 'https://pintamunditintasjaguare.com.br/',
+        stack: [
+            'PHP',
+            'Bootstrap',
+            'MySql'
+        ],
+        desc: 'Landing Page criada para comércio familiar.'
+    },
 ];
 
 const work = [
-    { img: 'logo-moreno', name: 'Moreno Advogados', description: 'Manutenção do site (lowcode), suporte técnico aos colaboradores e alimentação do banco de dados interno.', ocupation: 'Estágio', links: 'http://morenoadvogados.com.br/' },
-    { img: 'logo-morgan', name: 'Instituto Morgan', description: 'Suporte aos colaboradores, Social Media e apoio a equipe de Comunicação.', ocupation: 'Técnico de Suporte Júnior', links: 'https://www.instagram.com/institutomorgan/' },
-    { img: 'logo-aceda', name: 'ACEDA', description: 'Criação de arte para mídias sociais e Desenvolvimento do Site com PHP e Bootstrap', ocupation: 'Web Designer', links: ['https://www.aceda.org.br/', 'https://www.instagram.com/aceda.sampa/', 'recomendação'] },
-    { img: 'logo-ideal', name: 'Grupo Ideal Trends', description: 'Criação de sites com PHP, JavaScript e Bootstrap focados em SEO.', ocupation: 'Analista de Front-End Junior', links: ['https://idealtrends.com.br/', 'https://www.doutoresdaweb.com.br/'] },
-    { img: 'logo-phd', name: 'PHD do Brasil', description: 'Desenvolver interfaces de usuário utilizando Nuxt e Vue.js', ocupation: 'Desenvolvedor Front-End', links: 'https://phddobrasil.com.br/' },
+    {
+        img: 'logo-moreno',
+        name: 'Moreno Advogados',
+        description: 'Manutenção do site (lowcode), suporte técnico aos colaboradores e alimentação do banco de dados interno.',
+        ocupation: 'Estágio',
+        links: [
+            { 
+                url: 'http://morenoadvogados.com.br/', 
+                title: 'Site' 
+            }
+        ], 
+        skills: [
+            'HTML',
+            'CSS',
+            'Excel',
+            'Pacote Office',
+            'Suporte a Sistemas',
+            'Photoshop'
+        ]
+    },
+    {
+        img: 'logo-morgan',
+        name: 'Instituto Morgan',
+        description: 'Suporte aos colaboradores, Social Media e apoio a equipe de Comunicação.', ocupation: 'Técnico de Suporte Júnior', 
+        links: [
+            { 
+                url: 'https://www.instagram.com/institutomorgan/', 
+                title: 'Instagram' 
+            }
+        ], 
+        skills: [
+            'Canva',
+            'Meta Business',
+            'Mídias Sociais',
+            'Pacote Office',
+            'Suporte a Sistemas'
+        ]
+    },
+    {
+        img: 'logo-aceda',
+        name: 'ACEDA',
+        description: 'Criação de arte para mídias sociais e Desenvolvimento do Site com PHP e Bootstrap',
+        ocupation: 'Web Designer',
+        links: [
+            { 
+                url: 'https://www.aceda.org.br/', 
+                title: 'Site' 
+            },
+            { 
+                url: 'https://www.instagram.com/aceda.sampa/', 
+                title: 'Instagram' 
+            }
+        ], 
+        skills: [
+            'Canva',
+            'Design',
+            'HTML',
+            'CSS',
+            'PHP',
+            'Bootstrap',
+            'Git'
+        ] 
+    },
+    {
+        img: 'logo-ideal',
+        name: 'Grupo Ideal Trends',
+        description: 'Criação de sites com PHP, JavaScript e Bootstrap focados em SEO.',
+        ocupation: 'Analista de Front-End Junior', 
+        links: [
+            {
+                url: 'https://idealtrends.com.br/', 
+                title: 'Site Grupo'
+            },
+            {
+                url: 'https://www.doutoresdaweb.com.br/', 
+                title: 'Site Doutores'
+            }
+        ],
+        skills: [
+            'HTML',
+            'CSS',
+            'Javascript',
+            'Bootstrap',
+            'PHP',
+            'MySql',
+            'Git'] 
+    },
+    { 
+        img: 'logo-phd',
+        name: 'PHD do Brasil',
+        description: 'Desenvolver interfaces de usuário utilizando Nuxt e Vue.js',
+        ocupation: 'Desenvolvedor Front-End', 
+        links: [
+            {
+                url: 'https://phddobrasil.com.br/',
+                title: 'Site'
+            }
+        ],
+        skills: [
+            'JavaScript',
+            'Vue',
+            'Nuxt',
+            'Nuxt UI',
+            'Tailwind',
+            'MVC',
+            'Git'
+        ]
+    },
 ];
 
 const education = [
-    { img: 'logo-cps', name: 'Etec Raposo', course: 'Técnico de Informática Integrado ao Ensino Médio' },
-    { img: 'logo-ifsp', name: 'IFSP Pirituba', course: 'Tecnologia em Análise e Desenvolvimento de Sistemas' },
-    { img: 'logo-senac', name: 'Senac', course: 'Pós Graduação em Engenharia da Qualidade de Software' },
+    { 
+        img: 'logo-cps',
+        name: 'Etec Raposo',
+        course: 'Técnico de Informática Integrado ao Ensino Médio'
+    },
+    {
+        img: 'logo-ifsp',
+        name: 'IFSP Pirituba',
+        course: 'Tecnologia em Análise e Desenvolvimento de Sistemas' 
+    },
+    { 
+        img: 'logo-senac',
+        name: 'Senac',
+        course: 'Pós Graduação em Engenharia da Qualidade de Software'
+    },
 ];
 
 const personal_info = [
@@ -89,7 +238,7 @@ class SkillsComponent extends BaseComponent {
 
 class ProjectComponent extends BaseComponent {
     renderItem(item) {
-        const card = this.createCard('card__project focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#9e2a3e]');
+        const card = this.createCard('card__project transition duration-300 ease-in-out hover:outline-2 hover:outline-offset-2 hover:outline-[#9e2a3e] focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#9e2a3e]');
         const content = this.createContent('card__content h-full p-6');
         const stackHTML = item.stack.map(tech => `<span class="badge">${tech}</span>`).join('');
 
@@ -117,13 +266,26 @@ class ProjectComponent extends BaseComponent {
 
 class WorkComponent extends BaseComponent {
     renderItem(item) {
-        const card = this.createCard();
-        const content = this.createContent();
+        const card = this.createCard('card__work');
+        const content = this.createContent('card__content h-full p-6');
+        const skillsHTML = item.skills.map(tech => `<span class="badge bg-[#303841]">${tech}</span>`).join('');
+        const linksHTML = item.links.map(link => `<a class="button button__link" target="_blank" rel="noopener noreferrer" href="${link.url}" title="${link.title}">${link.title}</a>`).join('');
 
         content.innerHTML = `
-            <div>
-                <img src="./src/assets/work/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" width="150" height="150" />
-                ${item.name}
+            <div class="flex flex-col lg:flex-row items-center lg:items-start gap-3">
+                <div class="w-30 min-w-30 h-30">
+                    <img class="w-full h-full rounded-2xl aspect-square object-cover" src="./src/assets/work/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" width="150" height="150" />
+                </div>
+              <div>
+                <h2 class="my-4 text-[24px] font-bold">${item.name} <span class="block font-light text-lg italic">${item.ocupation}</span> </h2>
+                <p>${item.description}</p>
+              </div>
+            </div>
+            <div class="stack flex flex-wrap gap-5 mt-6 justify-center lg:justify-start">
+                ${linksHTML}
+            </div>
+            <div class="stack flex flex-wrap gap-5 mt-6 justify-center lg:justify-start">
+              ${skillsHTML}
             </div>
         `;
 
