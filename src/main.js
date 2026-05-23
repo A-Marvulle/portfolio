@@ -58,11 +58,11 @@ const work = [
         description: 'Manutenção do site (lowcode), suporte técnico aos colaboradores e alimentação do banco de dados interno.',
         ocupation: 'Estágio',
         links: [
-            { 
-                url: 'http://morenoadvogados.com.br/', 
-                title: 'Site' 
+            {
+                url: 'http://morenoadvogados.com.br/',
+                title: 'Site'
             }
-        ], 
+        ],
         skills: [
             'HTML',
             'CSS',
@@ -75,13 +75,13 @@ const work = [
     {
         img: 'logo-morgan',
         name: 'Instituto Morgan',
-        description: 'Suporte aos colaboradores, Social Media e apoio a equipe de Comunicação.', ocupation: 'Técnico de Suporte Júnior', 
+        description: 'Suporte aos colaboradores, Social Media e apoio a equipe de Comunicação.', ocupation: 'Técnico de Suporte Júnior',
         links: [
-            { 
-                url: 'https://www.instagram.com/institutomorgan/', 
-                title: 'Instagram' 
+            {
+                url: 'https://www.instagram.com/institutomorgan/',
+                title: 'Instagram'
             }
-        ], 
+        ],
         skills: [
             'Canva',
             'Meta Business',
@@ -96,15 +96,15 @@ const work = [
         description: 'Criação de arte para mídias sociais e Desenvolvimento do Site com PHP e Bootstrap',
         ocupation: 'Web Designer',
         links: [
-            { 
-                url: 'https://www.aceda.org.br/', 
-                title: 'Site' 
+            {
+                url: 'https://www.aceda.org.br/',
+                title: 'Site'
             },
-            { 
-                url: 'https://www.instagram.com/aceda.sampa/', 
-                title: 'Instagram' 
+            {
+                url: 'https://www.instagram.com/aceda.sampa/',
+                title: 'Instagram'
             }
-        ], 
+        ],
         skills: [
             'Canva',
             'Design',
@@ -113,20 +113,20 @@ const work = [
             'PHP',
             'Bootstrap',
             'Git'
-        ] 
+        ]
     },
     {
         img: 'logo-ideal',
         name: 'Grupo Ideal Trends',
         description: 'Criação de sites com PHP, JavaScript e Bootstrap focados em SEO.',
-        ocupation: 'Analista de Front-End Junior', 
+        ocupation: 'Analista de Front-End Junior',
         links: [
             {
-                url: 'https://idealtrends.com.br/', 
+                url: 'https://idealtrends.com.br/',
                 title: 'Site Grupo'
             },
             {
-                url: 'https://www.doutoresdaweb.com.br/', 
+                url: 'https://www.doutoresdaweb.com.br/',
                 title: 'Site Doutores'
             }
         ],
@@ -137,13 +137,13 @@ const work = [
             'Bootstrap',
             'PHP',
             'MySql',
-            'Git'] 
+            'Git']
     },
-    { 
+    {
         img: 'logo-phd',
         name: 'PHD do Brasil',
         description: 'Desenvolver interfaces de usuário utilizando Nuxt e Vue.js',
-        ocupation: 'Desenvolvedor Front-End', 
+        ocupation: 'Desenvolvedor Front-End',
         links: [
             {
                 url: 'https://phddobrasil.com.br/',
@@ -163,7 +163,7 @@ const work = [
 ];
 
 const education = [
-    { 
+    {
         img: 'logo-cps',
         name: 'Etec Raposo',
         course: 'Técnico de Informática Integrado ao Ensino Médio'
@@ -171,9 +171,9 @@ const education = [
     {
         img: 'logo-ifsp',
         name: 'IFSP Pirituba',
-        course: 'Tecnologia em Análise e Desenvolvimento de Sistemas' 
+        course: 'Tecnologia em Análise e Desenvolvimento de Sistemas'
     },
-    { 
+    {
         img: 'logo-senac',
         name: 'Senac',
         course: 'Pós Graduação em Engenharia da Qualidade de Software'
@@ -245,7 +245,7 @@ class ProjectComponent extends BaseComponent {
         content.innerHTML = `
               <a class="flex flex-col gap-3 h-full items-center lg:items-start focus:outline-none" href="${item.link}" title="${item.name}" target="_blank" rel="noopener noreferrer">
                 <div class="card__project-img">
-                  <img class="aspect-1/1 object-cover" src="./src/assets/projects/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" />
+                  <img class="aspect-square object-cover" src="./src/assets/projects/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" />
                 </div>
                 <div class="card__project-info flex flex-col justify-around h-full">
                   <h2 class="text-3xl text-[#9e1a3e] font-bold">${item.name}</h2>
@@ -296,11 +296,11 @@ class WorkComponent extends BaseComponent {
 
 class EducationComponent extends BaseComponent {
     renderItem(item) {
-        const card = this.createCard('card__education w-150 mx-auto border-y-1 border-[#333] my-8 p-3');
+        const card = this.createCard('card__education text-center lg:text-start lg:w-150 mx-auto border-y-1 border-[#333] my-8 p-3');
         const content = this.createContent();
 
         content.innerHTML = `
-            <div class="flex items-center gap-4">
+            <div class="flex flex-col lg:flex-row items-center gap-4">
                 <div class="bg-white rounded-full">
                     <img src="./src/assets/education/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" width="150" height="150" />
                 </div>
@@ -318,7 +318,7 @@ class EducationComponent extends BaseComponent {
 
 class PersonalInfoComponent extends BaseComponent {
     renderItem(item) {
-        const card = this.createCard('card__info w-100 mx-auto my-7 bg-[#9e2a3a] p-4 rounded-full transition duration-300 ease-in-out hover:outline-2 hover:outline-offset-2 hover:outline-[#9e2a3e] focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#9e2a3e] relative');
+        const card = this.createCard('card__info w-80 lg:w-100 mx-auto my-7 bg-[#9e2a3a] p-4 rounded-full transition duration-300 ease-in-out hover:outline-2 hover:outline-offset-2 hover:outline-[#9e2a3e] focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#9e2a3e] relative');
         const content = this.createContent();
 
         content.innerHTML = `
@@ -338,10 +338,25 @@ function initializeComponent(classComponent, data, renderId) {
     info.render(renderId);
 }
 
+
 document.addEventListener('DOMContentLoaded', () => {
     initializeComponent(SkillsComponent, skills, 'skills');
     initializeComponent(ProjectComponent, projects, 'projects');
     initializeComponent(WorkComponent, work, 'work');
     initializeComponent(EducationComponent, education, 'education');
     initializeComponent(PersonalInfoComponent, personal_info, 'infoId');
+
+    const menuCheck = document.getElementById("navbar__control");
+    function closeMenu() {
+        menuCheck.checked = false;
+    }
+    document.querySelectorAll('nav a.link_btn').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+            menuCheck.checked = false;
+        }
+    });
 });

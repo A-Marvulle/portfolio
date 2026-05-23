@@ -11,17 +11,82 @@
 </head>
 
 <body>
-    <header>
+    <nav
+        class="fixed w-[95vw] min-w-87.5 max-w-fit shadow h-16 p-4 mx-0 mt-2 top-0 left-1/2 -translate-x-1/2 rounded-full backdrop-blur-md bg-[#333]/70 border border-white/20 z-90 group">
 
-    </header>
+        <input type="checkbox" id="navbar__control"
+            class="md:hidden absolute w-8 h-8 top-4 left-5 z-20 opacity-0 cursor-pointer" />
+
+        <div
+            class="flex justify-center items-center md:hidden absolute top-4 left-5 w-8 h-8 group-has-checked:hidden pointer-events-none">
+            <i class="fa-solid fa-bars text-white text-2xl"></i>
+        </div>
+
+        <div
+            class="hidden md:hidden absolute top-4 left-5 w-8 h-8 group-has-checked:flex group-has-checked:justify-center group-has-checked:items-center pointer-events-none">
+            <i class="fa-solid fa-xmark text-white text-2xl"></i>
+        </div>
+
+        <ul class="flex flex-col md:flex-row gap-6 md:gap-8 justify-center items-center absolute md:static top-20 left-1/2 -translate-x-1/2 md:translate-x-0 w-[90%] md:w-full bg-[#333]/95 md:bg-transparent rounded-3xl py-8 md:py-0 transition-all duration-300
+
+        opacity-0 pointer-events-none scale-95
+
+        md:opacity-100 md:pointer-events-auto md:scale-100
+
+        group-has-checked:opacity-100
+        group-has-checked:pointer-events-auto
+        group-has-checked:scale-100">
+
+            <li>
+                <a href="#home"
+                    class="link_btn uppercase hover:bg-[#9e2a3a] p-3 rounded-full text-[12px] transition ease-in-out">
+                    <i class="fa-solid fa-home"></i>
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="#projects"
+                    class="link_btn uppercase hover:bg-[#9e2a3a] p-3 rounded-full text-[12px] transition ease-in-out">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    Projetos
+                </a>
+            </li>
+
+            <li>
+                <a href="#work"
+                    class="link_btn uppercase hover:bg-[#9e2a3a] p-3 rounded-full text-[12px] transition ease-in-out">
+                    <i class="fa-solid fa-briefcase"></i>
+                    Experiência
+                </a>
+            </li>
+
+            <li>
+                <a href="#education"
+                    class="link_btn uppercase hover:bg-[#9e2a3a] p-3 rounded-full text-[12px] transition ease-in-out">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    Educação
+                </a>
+            </li>
+
+            <li>
+                <a href="#infoId"
+                    class="link_btn uppercase hover:bg-[#9e2a3a] p-3 rounded-full text-[12px] transition ease-in-out">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Contato
+                </a>
+            </li>
+        </ul>
+    </nav>
     <main>
-        <section class="py-5 text-center bg-[linear-gradient(62deg,#3a3d40_0%,#181719_100%)] text-white h-175">
+        <section class="py-5 text-center bg-[linear-gradient(62deg,#3a3d40_0%,#181719_100%)] text-white lg:h-175"
+            id="home">
             <div class="container mx-auto h-full  flex flex-col justify-around items-center">
                 <div>
-                    <h1 class="text-[72px]">Olá! Meu nome é Alfredo</h1>
+                    <h1 class="text-[45px] my-10 lg:text-[72px]">Olá! Meu nome é Alfredo</h1>
                     <p class="text-3xl italic text-[#9e2a3a]">Sou um desenvolvedor Front-End</p>
                 </div>
-                <h2 class="text-center text-3xl">Base Tecnológica</h2>
+                <h2 class="text-center text-3xl my-5">Base Tecnológica</h2>
                 <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3" id="skills"></div>
             </div>
         </section>
