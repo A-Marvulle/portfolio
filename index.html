@@ -1,126 +1,42 @@
-<!DOCTYPE html>
-<html lang="PT-BR">
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="theme-color" content="#9e2a3a" />
+        <link rel="icon" href="/img/favicon.ico" />
+        <title>Portfolio</title>
 
-<head>
-    <meta name="theme-color" content="#9e2a3a">
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-    <title>Portfolio</title>
-    <link href="./src/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="/src/style.css" />
+    </head>
 
-</head>
+    <body>
+        <main class="screen relative h-screen w-full flex flex-col justify-between">
+            <aside
+                class="relative flex flex-col flex-1 justify-start items-end p-5 bg-blue-400"
+            >
+                <button data-modal="work">Work</button>
 
-<body>
-    <nav
-        class="fixed w-[95vw] min-w-87.5 max-w-fit shadow h-16 p-4 mx-0 mt-2 top-0 left-1/2 -translate-x-1/2 rounded-full backdrop-blur-md bg-[#333]/70 border border-white/20 z-90 group">
+                <button data-modal="school">School</button>
 
-        <input type="checkbox" id="navbar__control"
-            class="md:hidden absolute w-8 h-8 top-4 left-5 z-20 opacity-0 cursor-pointer" />
+                <button data-modal="projects">Projects</button>
 
-        <div
-            class="flex justify-center items-center md:hidden absolute top-4 left-5 w-8 h-8 group-has-checked:hidden pointer-events-none">
-            <i class="fa-solid fa-bars text-white text-2xl"></i>
-        </div>
+                <button data-modal="contact">Contact Me</button>
 
-        <div
-            class="hidden md:hidden absolute top-4 left-5 w-8 h-8 group-has-checked:flex group-has-checked:justify-center group-has-checked:items-center pointer-events-none">
-            <i class="fa-solid fa-xmark text-white text-2xl"></i>
-        </div>
+                <!-- onde todas as janelas serão renderizadas -->
+                <desktop-manager></desktop-manager>
+            </aside>
 
-        <ul class="flex flex-col md:flex-row gap-6 md:gap-8 justify-center items-center absolute md:static top-20 left-1/2 -translate-x-1/2 md:translate-x-0 w-[90%] md:w-full bg-[#333]/95 md:bg-transparent rounded-3xl py-8 md:py-0 transition-all duration-300
+            <nav class="bar flex gap-4 p-5 bg-amber-300">
+                <button data-modal="work">Work</button>
 
-        opacity-0 pointer-events-none scale-95
+                <button data-modal="school">School</button>
 
-        md:opacity-100 md:pointer-events-auto md:scale-100
+                <button data-modal="projects">Projects</button>
 
-        group-has-checked:opacity-100
-        group-has-checked:pointer-events-auto
-        group-has-checked:scale-100">
+                <button data-modal="contact">Contact Me</button>
+            </nav>
+        </main>
 
-            <li>
-                <a href="#home"
-                    class="link_btn uppercase hover:bg-[#9e2a3a] p-3 rounded-full text-[12px] transition ease-in-out">
-                    <i class="fa-solid fa-home"></i>
-                    Home
-                </a>
-            </li>
-
-            <li>
-                <a href="#projects"
-                    class="link_btn uppercase hover:bg-[#9e2a3a] p-3 rounded-full text-[12px] transition ease-in-out">
-                    <i class="fa-solid fa-laptop-code"></i>
-                    Projetos
-                </a>
-            </li>
-
-            <li>
-                <a href="#work"
-                    class="link_btn uppercase hover:bg-[#9e2a3a] p-3 rounded-full text-[12px] transition ease-in-out">
-                    <i class="fa-solid fa-briefcase"></i>
-                    Experiência
-                </a>
-            </li>
-
-            <li>
-                <a href="#education"
-                    class="link_btn uppercase hover:bg-[#9e2a3a] p-3 rounded-full text-[12px] transition ease-in-out">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    Educação
-                </a>
-            </li>
-
-            <li>
-                <a href="#infoId"
-                    class="link_btn uppercase hover:bg-[#9e2a3a] p-3 rounded-full text-[12px] transition ease-in-out">
-                    <i class="fa-solid fa-paper-plane"></i>
-                    Contato
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <main>
-        <section class="py-5 text-center bg-[linear-gradient(62deg,#3a3d40_0%,#181719_100%)] text-white lg:h-175"
-            id="home">
-            <div class="container mx-auto h-full  flex flex-col justify-around items-center">
-                <div>
-                    <h1 class="text-[45px] my-10 lg:text-[72px]">Olá! Meu nome é Alfredo</h1>
-                    <p class="text-3xl italic text-[#9e2a3a]">Sou um desenvolvedor Front-End</p>
-                </div>
-                <h2 class="text-center text-3xl my-5">Base Tecnológica</h2>
-                <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3" id="skills"></div>
-            </div>
-        </section>
-        <section class="py-5">
-            <h2 class="title">Meus Projetos Recentes</h2>
-            <div class="container mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-3 text-center lg:text-start gap-4" id="projects"></div>
-            </div>
-        </section>
-        <section class="py-5 bg-[#333]">
-            <div class="container mx-auto">
-                <h2 class="title">Minhas experiências Profissionais</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-2 text-center lg:text-start gap-4" id="work"></div>
-            </div>
-        </section>
-        <section class="py-5">
-            <div class="container mx-auto">
-                <h2 class="title">Minha Trajetória Acadêmica</h2>
-                <div id="education"></div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-[#333] py-5">
-        <section class="container mx-auto">
-            <h2 class="title">Entre em contato</h2>
-            <div id="infoId"></div>
-        </section>
-        <div class="text-center py-5">
-            <a href="./public/cv-alfredo.pdf" class="button hover:cursor-pointer" title="Baixar Currículo"
-                target="_blank" rel="noopener noreferrer">Baixar Currículo</a>
-        </div>
-    </footer>
-    <script type="module" src="/src/main.js"></script>
-</body>
-
+        <script type="module" src="/src/main.js"></script>
+    </body>
 </html>

@@ -1,362 +1,347 @@
-import '@fortawesome/fontawesome-free/css/all.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 const skills = [
-    { icon: 'fa-brands fa-js', name: 'JavaScript', color: '#f7df1e' },
-    { icon: 'fa-brands fa-typescript', name: 'TypeScript', color: '#3178C6' },
-    { icon: 'fa-brands fa-vuejs', name: 'Vue / Nuxt', color: '#41B883' },
-    // { icon: '', name: 'Nuxt' },
-    { icon: 'fa-brands fa-php', name: 'PHP', color: '#474a8a' },
-    { icon: 'fa-brands fa-bootstrap', name: 'Bootstrap', color: '#553C7B' },
-    { icon: 'fa-brands fa-tailwind-css', name: 'Tailwind', color: '#06B6D4' },
-    { icon: 'fa-brands fa-postgresql', name: 'MySql e Postgres', color: '#F29111' },
-    { icon: 'fa-brands fa-docker', name: 'Docker', color: '#0db7ed' },
+  { icon: "fa-brands fa-js", name: "JavaScript", color: "#f7df1e" },
+  { icon: "fa-brands fa-typescript", name: "TypeScript", color: "#3178C6" },
+  { icon: "fa-brands fa-vuejs", name: "Vue / Nuxt", color: "#41B883" },
+  // { icon: '', name: 'Nuxt' },
+  { icon: "fa-brands fa-php", name: "PHP", color: "#474a8a" },
+  { icon: "fa-brands fa-bootstrap", name: "Bootstrap", color: "#553C7B" },
+  { icon: "fa-brands fa-tailwind-css", name: "Tailwind", color: "#06B6D4" },
+  {
+    icon: "fa-brands fa-postgresql",
+    name: "MySql e Postgres",
+    color: "#F29111",
+  },
+  { icon: "fa-brands fa-docker", name: "Docker", color: "#0db7ed" },
 ];
 
 const projects = [
-    {
-        img: 'tcc',
-        inst: 'IFSP',
-        name: 'TCC',
-        link: 'https://github.com/A-Marvulle/readnplay',
-        stack: [
-            'Flutter',
-            'Dart',
-            'FluterFlow',
-            'Firebase'
-        ],
-        desc: 'Trabalho de Conclusão de Curso do IFSP. Esse projeto desenvolvido em grupo, teve como objetivo criar um aplicativo mobile que incentivasse em jovens o hábito de ler.'
-    },
-    {
-        img: 'doutores',
-        inst: 'Grupo Ideal Trends',
-        name: 'Teste Técnico',
-        link: 'https://a-marvulle.github.io/testegitanalista/',
-        stack: [
-            'HTML',
-            'CSS',
-            'JavaScript'
-        ],
-        desc: 'Teste técnico aprovado para a empresa Doutores da Web do Grupo Ideal Trends. O teste consistia em replicar um mockup com um tema livre.'
-    },
-    {
-        img: 'pmt',
-        inst: 'Pinta Mundi Tintas Jaguaré',
-        name: 'Landing Page',
-        link: 'https://pintamunditintasjaguare.com.br/',
-        stack: [
-            'PHP',
-            'Bootstrap',
-            'MySql'
-        ],
-        desc: 'Landing Page criada para comércio familiar.'
-    },
+  {
+    img: "tcc",
+    inst: "IFSP",
+    name: "TCC",
+    link: "https://github.com/A-Marvulle/readnplay",
+    stack: ["Flutter", "Dart", "FluterFlow", "Firebase"],
+    desc: "Trabalho de Conclusão de Curso do IFSP. Esse projeto desenvolvido em grupo, teve como objetivo criar um aplicativo mobile que incentivasse em jovens o hábito de ler.",
+  },
+  {
+    img: "doutores",
+    inst: "Grupo Ideal Trends",
+    name: "Teste Técnico",
+    link: "https://a-marvulle.github.io/testegitanalista/",
+    stack: ["HTML", "CSS", "JavaScript"],
+    desc: "Teste técnico aprovado para a empresa Doutores da Web do Grupo Ideal Trends. O teste consistia em replicar um mockup com um tema livre.",
+  },
+  {
+    img: "pmt",
+    inst: "Pinta Mundi Tintas Jaguaré",
+    name: "Landing Page",
+    link: "https://pintamunditintasjaguare.com.br/",
+    stack: ["PHP", "Bootstrap", "MySql"],
+    desc: "Landing Page criada para comércio familiar.",
+  },
 ];
 
 const work = [
-    {
-        img: 'logo-moreno',
-        name: 'Moreno Advogados',
-        description: 'Manutenção do site (lowcode), suporte técnico aos colaboradores e alimentação do banco de dados interno.',
-        ocupation: 'Estágio',
-        links: [
-            {
-                url: 'http://morenoadvogados.com.br/',
-                title: 'Site'
-            }
-        ],
-        skills: [
-            'HTML',
-            'CSS',
-            'Excel',
-            'Pacote Office',
-            'Suporte a Sistemas',
-            'Photoshop'
-        ]
-    },
-    {
-        img: 'logo-morgan',
-        name: 'Instituto Morgan',
-        description: 'Suporte aos colaboradores, Social Media e apoio a equipe de Comunicação.', ocupation: 'Técnico de Suporte Júnior',
-        links: [
-            {
-                url: 'https://www.instagram.com/institutomorgan/',
-                title: 'Instagram'
-            }
-        ],
-        skills: [
-            'Canva',
-            'Meta Business',
-            'Mídias Sociais',
-            'Pacote Office',
-            'Suporte a Sistemas'
-        ]
-    },
-    {
-        img: 'logo-aceda',
-        name: 'ACEDA',
-        description: 'Criação de arte para mídias sociais e Desenvolvimento do Site com PHP e Bootstrap',
-        ocupation: 'Web Designer',
-        links: [
-            {
-                url: 'https://www.aceda.org.br/',
-                title: 'Site'
-            },
-            {
-                url: 'https://www.instagram.com/aceda.sampa/',
-                title: 'Instagram'
-            }
-        ],
-        skills: [
-            'Canva',
-            'Design',
-            'HTML',
-            'CSS',
-            'PHP',
-            'Bootstrap',
-            'Git'
-        ]
-    },
-    {
-        img: 'logo-ideal',
-        name: 'Grupo Ideal Trends',
-        description: 'Criação de sites com PHP, JavaScript e Bootstrap focados em SEO.',
-        ocupation: 'Analista de Front-End Junior',
-        links: [
-            {
-                url: 'https://idealtrends.com.br/',
-                title: 'Site Grupo'
-            },
-            {
-                url: 'https://www.doutoresdaweb.com.br/',
-                title: 'Site Doutores'
-            }
-        ],
-        skills: [
-            'HTML',
-            'CSS',
-            'Javascript',
-            'Bootstrap',
-            'PHP',
-            'MySql',
-            'Git']
-    },
-    {
-        img: 'logo-phd',
-        name: 'PHD do Brasil',
-        description: 'Desenvolver interfaces de usuário utilizando Nuxt e Vue.js',
-        ocupation: 'Desenvolvedor Front-End',
-        links: [
-            {
-                url: 'https://phddobrasil.com.br/',
-                title: 'Site'
-            }
-        ],
-        skills: [
-            'JavaScript',
-            'Vue',
-            'Nuxt',
-            'Nuxt UI',
-            'Tailwind',
-            'MVC',
-            'Git'
-        ]
-    },
+  {
+    img: "logo-moreno",
+    name: "Moreno Advogados",
+    description:
+      "Manutenção do site (lowcode), suporte técnico aos colaboradores e alimentação do banco de dados interno.",
+    ocupation: "Estágio",
+    links: [
+      {
+        url: "http://morenoadvogados.com.br/",
+        title: "Site",
+      },
+    ],
+    skills: [
+      "HTML",
+      "CSS",
+      "Excel",
+      "Pacote Office",
+      "Suporte a Sistemas",
+      "Photoshop",
+    ],
+  },
+  {
+    img: "logo-morgan",
+    name: "Instituto Morgan",
+    description:
+      "Suporte aos colaboradores, Social Media e apoio a equipe de Comunicação.",
+    ocupation: "Técnico de Suporte Júnior",
+    links: [
+      {
+        url: "https://www.instagram.com/institutomorgan/",
+        title: "Instagram",
+      },
+    ],
+    skills: [
+      "Canva",
+      "Meta Business",
+      "Mídias Sociais",
+      "Pacote Office",
+      "Suporte a Sistemas",
+    ],
+  },
+  {
+    img: "logo-aceda",
+    name: "ACEDA",
+    description:
+      "Criação de arte para mídias sociais e Desenvolvimento do Site com PHP e Bootstrap",
+    ocupation: "Web Designer",
+    links: [
+      {
+        url: "https://www.aceda.org.br/",
+        title: "Site",
+      },
+      {
+        url: "https://www.instagram.com/aceda.sampa/",
+        title: "Instagram",
+      },
+    ],
+    skills: ["Canva", "Design", "HTML", "CSS", "PHP", "Bootstrap", "Git"],
+  },
+  {
+    img: "logo-ideal",
+    name: "Grupo Ideal Trends",
+    description:
+      "Criação de sites com PHP, JavaScript e Bootstrap focados em SEO.",
+    ocupation: "Analista de Front-End Junior",
+    links: [
+      {
+        url: "https://idealtrends.com.br/",
+        title: "Site Grupo",
+      },
+      {
+        url: "https://www.doutoresdaweb.com.br/",
+        title: "Site Doutores",
+      },
+    ],
+    skills: ["HTML", "CSS", "Javascript", "Bootstrap", "PHP", "MySql", "Git"],
+  },
+  {
+    img: "logo-phd",
+    name: "PHD do Brasil",
+    description: "Desenvolver interfaces de usuário utilizando Nuxt e Vue.js",
+    ocupation: "Desenvolvedor Front-End",
+    links: [
+      {
+        url: "https://phddobrasil.com.br/",
+        title: "Site",
+      },
+    ],
+    skills: ["JavaScript", "Vue", "Nuxt", "Nuxt UI", "Tailwind", "MVC", "Git"],
+  },
 ];
 
 const education = [
-    {
-        img: 'logo-cps',
-        name: 'Etec Raposo',
-        course: 'Técnico de Informática Integrado ao Ensino Médio'
-    },
-    {
-        img: 'logo-ifsp',
-        name: 'IFSP Pirituba',
-        course: 'Tecnologia em Análise e Desenvolvimento de Sistemas'
-    },
-    {
-        img: 'logo-senac',
-        name: 'Senac',
-        course: 'Pós Graduação em Engenharia da Qualidade de Software'
-    },
+  {
+    img: "logo-cps",
+    name: "Etec Raposo",
+    course: "Técnico de Informática Integrado ao Ensino Médio",
+  },
+  {
+    img: "logo-ifsp",
+    name: "IFSP Pirituba",
+    course: "Tecnologia em Análise e Desenvolvimento de Sistemas",
+  },
+  {
+    img: "logo-senac",
+    name: "Senac",
+    course: "Pós Graduação em Engenharia da Qualidade de Software",
+  },
 ];
 
 const personal_info = [
-    { icon: 'fab fa-github', link: 'https://github.com/A-Marvulle', name: 'Github' },
-    { icon: 'fa fa-envelope', link: 'mailto:alfredo.marvulle@gmail.com', name: 'alfredo.marvulle@gmail.com' },
-    { icon: 'fab fa-linkedin', link: 'https://www.linkedin.com/in/alfredoperesmarvulle-87920a1b7/', name: 'LinkedIn' },
-    { icon: 'fab fa-whatsapp', link: 'https://api.whatsapp.com/send/?phone=5511976007382&text=&type=phone_number&app_absent=0', name: '+55 11 9.7600-7382' },
+  {
+    icon: "fab fa-github",
+    link: "https://github.com/A-Marvulle",
+    name: "Github",
+  },
+  {
+    icon: "fa fa-envelope",
+    link: "mailto:alfredo.marvulle@gmail.com",
+    name: "alfredo.marvulle@gmail.com",
+  },
+  {
+    icon: "fab fa-linkedin",
+    link: "https://www.linkedin.com/in/alfredoperesmarvulle-87920a1b7/",
+    name: "LinkedIn",
+  },
+  {
+    icon: "fab fa-whatsapp",
+    link: "https://api.whatsapp.com/send/?phone=5511976007382&text=&type=phone_number&app_absent=0",
+    name: "+55 11 9.7600-7382",
+  },
 ];
 
-class BaseComponent {
-    constructor(data) {
-        this.data = data;
-    }
+// --- Window Manager ---
 
-    createCard(elementClassName = 'card') {
-        const card = document.createElement('div');
-        card.className = elementClassName;
-        return card;
-    }
+const desktop = document.querySelector("desktop-manager");
+const openWindows = new Map(); // id -> HTMLElement
+let topZ = 100;
 
-    createContent(elementClassName = 'card__content') {
-        const content = document.createElement('div');
-        content.className = elementClassName;
-        return content;
-    }
+const windowTitles = {
+  work: "Experiências",
+  school: "Formação",
+  projects: "Projetos",
+  contact: "Contato",
+};
 
-    renderItem(item) {
-        throw new Error('renderItem precisa ser implementado');
-    }
+function renderContent(id) {
+  switch (id) {
+    case "work":
+      return work
+        .map(
+          (w) => `
+        <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:12px">
+          <strong>${w.name}</strong> — <em>${w.ocupation}</em>
+          <p style="margin:4px 0;font-size:13px">${w.description}</p>
+          <div style="font-size:12px;color:#555">${w.skills.join(" · ")}</div>
+          <div style="margin-top:4px">${w.links.map((l) => `<a href="${l.url}" target="_blank" style="font-size:12px;margin-right:8px;color:#45567d">${l.title}</a>`).join("")}</div>
+        </div>`,
+        )
+        .join("");
 
-    render(containerId) {
-        const container = document.getElementById(containerId);
-        if (!container) return;
+    case "school":
+      return education
+        .map(
+          (e) => `
+        <div style="margin-bottom:12px">
+          <strong>${e.name}</strong>
+          <p style="font-size:13px;margin:2px 0;color:#444">${e.course}</p>
+        </div>`,
+        )
+        .join("");
 
-        this.data.forEach(item => {
-            const element = this.renderItem(item);
-            container.appendChild(element);
-        });
-    }
+    case "projects":
+      return projects
+        .map(
+          (p) => `
+        <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:12px">
+          <strong><a href="${p.link}" target="_blank" style="color:#45567d">${p.name}</a></strong>
+          <span style="font-size:12px;color:#777;margin-left:6px">${p.inst}</span>
+          <p style="font-size:13px;margin:4px 0">${p.desc}</p>
+          <div style="font-size:12px;color:#555">${p.stack.join(" · ")}</div>
+        </div>`,
+        )
+        .join("");
+
+    case "contact":
+      return personal_info
+        .map(
+          (c) => `
+        <div style="margin-bottom:10px">
+          <i class="${c.icon}" style="width:20px"></i>
+          <a href="${c.link}" target="_blank" style="color:#45567d;font-size:14px;margin-left:6px">${c.name}</a>
+        </div>`,
+        )
+        .join("");
+
+    default:
+      return "";
+  }
 }
 
-class SkillsComponent extends BaseComponent {
-    renderItem(item) {
-        const card = this.createCard('card__skills');
-        const content = this.createContent();
-
-        content.innerHTML = `
-            <div class="relative z-1 overflow-hidden w-[60%] bg-opacity-50 flex gap-3 items-center justify-start p-3 rounded-2xl" style="--item-color: ${item.color}">
-              <i class="${item.icon} text-[40px]" style="color: ${item.color}"></i>
-              <h3>${item.name}</h3>
-            </div>
-        `;
-
-        card.appendChild(content);
-        return card;
-    }
+function bringToFront(id) {
+  const el = openWindows.get(id);
+  if (!el) return;
+  topZ++;
+  el.style.zIndex = topZ;
 }
 
-class ProjectComponent extends BaseComponent {
-    renderItem(item) {
-        const card = this.createCard('card__project transition duration-300 ease-in-out hover:outline-2 hover:outline-offset-2 hover:outline-[#9e2a3e] focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#9e2a3e]');
-        const content = this.createContent('card__content h-full p-6');
-        const stackHTML = item.stack.map(tech => `<span class="badge">${tech}</span>`).join('');
-
-        content.innerHTML = `
-              <a class="flex flex-col gap-3 h-full items-center lg:items-start focus:outline-none" href="${item.link}" title="${item.name}" target="_blank" rel="noopener noreferrer">
-                <div class="card__project-img">
-                  <img class="aspect-square object-cover" src="portfolio/images/projects/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" />
-                </div>
-                <div class="card__project-info flex flex-col justify-around h-full">
-                  <h2 class="text-3xl text-[#9e1a3e] font-bold">${item.name}</h2>
-                    <p>${item.inst}</p>
-                    <p>${item.desc}</p>
-                  <div class="stack flex flex-wrap gap-5 mt-6 justify-center lg:justify-start">
-                    ${stackHTML}
-                  </div>
-                </div>
-               </a>
-              <span class="icon-hover absolute right-0 top-0 me-6 mt-6"><i class="fa-solid fa-code fa-2xl text-[#9e2a3e]"></i></span>
-        `;
-
-        card.appendChild(content);
-        return card;
-    }
+function closeWindow(id) {
+  const el = openWindows.get(id);
+  if (!el) return;
+  el.remove();
+  openWindows.delete(id);
 }
 
-class WorkComponent extends BaseComponent {
-    renderItem(item) {
-        const card = this.createCard('card__work');
-        const content = this.createContent('card__content h-full p-6');
-        const skillsHTML = item.skills.map(tech => `<span class="badge bg-[#303841]">${tech}</span>`).join('');
-        const linksHTML = item.links.map(link => `<a class="button button__link" target="_blank" rel="noopener noreferrer" href="${link.url}" title="${link.title}">${link.title}</a>`).join('');
+function makeDraggable(win, titlebar) {
+  let dragging = false;
+  let startX, startY, startLeft, startTop;
 
-        content.innerHTML = `
-            <div class="flex flex-col lg:flex-row items-center lg:items-start gap-3">
-                <div class="w-30 min-w-30 h-30">
-                    <img class="w-full h-full rounded-2xl aspect-square object-cover" src="portfolio/images/work/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" width="150" height="150" />
-                </div>
-              <div>
-                <h2 class="my-4 text-[24px] font-bold">${item.name} <span class="block font-light text-lg italic">${item.ocupation}</span> </h2>
-                <p>${item.description}</p>
-              </div>
-            </div>
-            <div class="stack flex flex-wrap gap-5 mt-6 justify-center lg:justify-start">
-                ${linksHTML}
-            </div>
-            <div class="stack flex flex-wrap gap-5 mt-6 justify-center lg:justify-start">
-              ${skillsHTML}
-            </div>
-        `;
+  titlebar.addEventListener("mousedown", (e) => {
+    if (e.target.tagName === "BUTTON") return;
+    const rect = win.getBoundingClientRect();
+    win.style.width = rect.width + "px";
+    win.style.height = rect.height + "px";
+    dragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    startLeft = parseInt(win.style.left) || 0;
+    startTop = parseInt(win.style.top) || 0;
+    bringToFront(win.dataset.windowId);
+    e.preventDefault();
+  });
 
-        card.appendChild(content);
-        return card;
-    }
+  document.addEventListener("mousemove", (e) => {
+    if (!dragging) return;
+    const bounds = desktop.getBoundingClientRect();
+    const maxLeft = bounds.width - win.offsetWidth;
+    const maxTop = bounds.height - win.offsetHeight;
+    const newLeft = Math.max(
+      0,
+      Math.min(maxLeft, startLeft + (e.clientX - startX)),
+    );
+    const newTop = Math.max(
+      0,
+      Math.min(maxTop, startTop + (e.clientY - startY)),
+    );
+    win.style.left = newLeft + "px";
+    win.style.top = newTop + "px";
+  });
+
+  document.addEventListener("mouseup", () => {
+    dragging = false;
+  });
 }
 
-class EducationComponent extends BaseComponent {
-    renderItem(item) {
-        const card = this.createCard('card__education text-center lg:text-start lg:w-150 mx-auto border-y-1 border-[#333] my-8 p-3');
-        const content = this.createContent();
+function createWindow(id) {
+  topZ++;
 
-        content.innerHTML = `
-            <div class="flex flex-col lg:flex-row items-center gap-4">
-                <div class="bg-white rounded-full">
-                    <img src="portfolio/images/education/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" width="150" height="150" />
-                </div>
-                <div>
-                    <h2 class="text-bold text-xl">${item.name}</h2>
-                    <p>${item.course}</p>
-                </div>
-            </div>
-        `;
+  const win = document.createElement("div");
+  win.className = "window";
+  win.dataset.windowId = id;
+  win.style.left = "5px";
+  win.style.top = "5px";
+  win.style.width = "95%";
+  win.style.height = "95%";
+  win.style.zIndex = topZ;
 
-        card.appendChild(content);
-        return card;
-    }
+  const titlebar = document.createElement("div");
+  titlebar.className = "window-titlebar";
+  titlebar.innerHTML = `<span>${windowTitles[id] ?? id}</span><button title="Fechar">✕</button>`;
+
+  const content = document.createElement("div");
+  content.className = "window-content";
+  content.innerHTML = renderContent(id);
+
+  titlebar
+    .querySelector("button")
+    .addEventListener("click", () => closeWindow(id));
+
+  win.appendChild(titlebar);
+  win.appendChild(content);
+
+  win.addEventListener("mousedown", () => bringToFront(id));
+
+  makeDraggable(win, titlebar);
+
+  desktop.appendChild(win);
+  openWindows.set(id, win);
 }
 
-class PersonalInfoComponent extends BaseComponent {
-    renderItem(item) {
-        const card = this.createCard('card__info w-80 lg:w-100 mx-auto my-7 bg-[#9e2a3a] p-4 rounded-full transition duration-300 ease-in-out hover:outline-2 hover:outline-offset-2 hover:outline-[#9e2a3e] focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#9e2a3e] relative');
-        const content = this.createContent();
-
-        content.innerHTML = `
-            <a class="flex gap-3 items-center focus-within:outline-none w-full h-full after:absolute after:inset-0" href="${item.link}" target="_blank" rel="noopener noreferrer">
-                <i class="${item.icon} text-2xl" aria-hidden="true"></i> 
-                <p>${item.name}</p>
-            </a>
-        `;
-
-        card.appendChild(content);
-        return card;
-    }
+function toggleWindow(id) {
+  if (openWindows.has(id)) {
+    bringToFront(id);
+  } else {
+    createWindow(id);
+  }
 }
 
-function initializeComponent(classComponent, data, renderId) {
-    const info = new classComponent(data);
-    info.render(renderId);
-}
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    initializeComponent(SkillsComponent, skills, 'skills');
-    initializeComponent(ProjectComponent, projects, 'projects');
-    initializeComponent(WorkComponent, work, 'work');
-    initializeComponent(EducationComponent, education, 'education');
-    initializeComponent(PersonalInfoComponent, personal_info, 'infoId');
-
-    const menuCheck = document.getElementById("navbar__control");
-    function closeMenu() {
-        menuCheck.checked = false;
-    }
-    document.querySelectorAll('nav a.link_btn').forEach(link => {
-        link.addEventListener('click', closeMenu);
-    });
-
-    window.addEventListener("resize", () => {
-        if (window.innerWidth >= 768) {
-            menuCheck.checked = false;
-        }
-    });
+document.querySelectorAll("[data-modal]").forEach((btn) => {
+  btn.addEventListener("click", () => toggleWindow(btn.dataset.modal));
 });

@@ -1,24 +1,52 @@
 @import "tailwindcss";
 
-@layer components {
-  .card__skills .card__content {@apply flex flex-col gap-3 md:flex-row justify-center items-center}
-  .card__project, .card__work {@apply h-full rounded-2xl shadow-md relative}
-  .card__project .card__project-img {@apply w-90 h-90}
-  .badge {@apply inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs bg-[#9e2a3a]}
-  .button {@apply inline-flex items-center gap-x-1.5 py-3 px-6 rounded-[12px] text-[18px] bg-transparent transition duration-300 ease-in-out border border-[#e3e3e3] hover:bg-[#9e2a3e] focus-within:bg-[#9e2a3e] focus-within:border-none focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#9e2a3e]}
-  .title {@apply  text-center text-3xl my-5 uppercase tracking-[1.6px]}
-}
-:root {
-    scroll-behavior: smooth;
-
-}
-body {background: #303841; color: #f0f0f0}
-.card__skills .card__content>div:before {content: '';position: absolute;  left: 0;  right: 0;  width: 100%;  border-radius: inherit;  height: 100%;  border: 2px solid var(--item-color);  animation: clippath 3s infinite linear;}
-
-@keyframes clippath {
-    0%, 100% {clip-path: inset(0 0 95% 0);}
-    25% {clip-path: inset(0 95% 0 0);}
-    50% {clip-path: inset(95% 0 0 0);}
-    75% {clip-path: inset(0 0 0 95%);}
+desktop-manager {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
 }
 
+.window {
+  position: absolute;
+  min-width: 280px;
+  min-height: 180px;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.25);
+  resize: both;
+  overflow: auto;
+  pointer-events: auto;
+}
+
+.window-titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  background: #303841;
+  color: white;
+  cursor: move;
+  user-select: none;
+  position: sticky;
+  top: 0;
+}
+
+.window-titlebar button {
+  background: #9e2a3a;
+  border: none;
+  color: white;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 11px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.window-content {
+  padding: 12px;
+}
