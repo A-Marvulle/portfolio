@@ -10,62 +10,45 @@
 .nav__btn {
     @apply flex justify-center items-center
         h-10 w-10
-        rounded-[4px]
+        rounded-sm
         transition-all duration-300
         outline outline-transparent
+        focus:outline-[#9e2a3a]
         hover:outline-[#9e2a3a];
 }
 
 .nav__btn:is(.active) {
     @apply text-[#9e2a3a] inset-shadow-sm inset-shadow-[#9e2a3a];
 }
+
 desktop-manager {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
+    @apply absolute inset-0  pointer-events-none overflow-hidden;
 }
 
 .window {
-    position: absolute;
-    min-width: 280px;
-    min-height: 180px;
-    background: white;
-    border: 1px solid #ccc;
-    box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.25);
-    resize: both;
-    overflow: auto;
-    pointer-events: auto;
+    @apply absolute min-w-280 min-h-180 bg-white border-none shadow-2xl resize overflow-auto pointer-events-auto;
 }
 
 .window-titlebar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 6px 10px;
-    background: #303841;
-    color: white;
-    cursor: move;
-    user-select: none;
-    position: sticky;
-    top: 0;
+    @apply flex justify-between items-center p-4  bg-[linear-gradient(62deg,#3a3d40_0%,#181719_100%)] text-white cursor-move sticky top-0;
 }
 
-.window-titlebar button {
-    background: #9e2a3a;
-    border: none;
-    color: white;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 11px;
-    line-height: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.window-titlebar-buttons {
+    @apply flex flex-row gap-3 items-center justify-center;
+}
+
+.window-titlebar-buttons button {
+    @apply w-5 h-5 border-none rounded-full flex items-center justify-center text-[12px];
+}
+
+.window-titlebar-buttons #resize {
+    @apply bg-blue-800 text-[#f0f0f0];
+}
+
+.window-titlebar-buttons #close {
+    @apply bg-red-800 text-[#f0f0f0];
 }
 
 .window-content {
-    padding: 12px;
+    @apply p-4;
 }

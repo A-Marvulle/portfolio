@@ -194,11 +194,14 @@ function renderContent(id) {
       return work
         .map(
           (w) => `
-        <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:12px">
+        <div>
           <strong>${w.name}</strong> — <em>${w.ocupation}</em>
-          <p style="margin:4px 0;font-size:13px">${w.description}</p>
-          <div style="font-size:12px;color:#555">${w.skills.join(" · ")}</div>
-          <div style="margin-top:4px">${w.links.map((l) => `<a href="${l.url}" target="_blank" style="font-size:12px;margin-right:8px;color:#45567d">${l.title}</a>`).join("")}</div>
+          <p>${w.description}</p>
+          <div>${w.skills.join(" · ")}</div>
+          <div>${w.links
+            .map((l) => `<a href="${l.url}" target="_blank">${l.title}</a>`)
+            .join("")}
+          </div>
         </div>`,
         )
         .join("");
@@ -207,9 +210,9 @@ function renderContent(id) {
       return education
         .map(
           (e) => `
-        <div style="margin-bottom:12px">
+        <div>
           <strong>${e.name}</strong>
-          <p style="font-size:13px;margin:2px 0;color:#444">${e.course}</p>
+          <p>${e.course}</p>
         </div>`,
         )
         .join("");
@@ -218,11 +221,11 @@ function renderContent(id) {
       return projects
         .map(
           (p) => `
-        <div style="margin-bottom:16px;border-bottom:1px solid #eee;padding-bottom:12px">
-          <strong><a href="${p.link}" target="_blank" style="color:#45567d">${p.name}</a></strong>
-          <span style="font-size:12px;color:#777;margin-left:6px">${p.inst}</span>
-          <p style="font-size:13px;margin:4px 0">${p.desc}</p>
-          <div style="font-size:12px;color:#555">${p.stack.join(" · ")}</div>
+        <div>
+          <strong><a href="${p.link}" target="_blank">${p.name}</a></strong>
+          <span>${p.inst}</span>
+          <p>${p.desc}</p>
+          <div>${p.stack.join(" · ")}</div>
         </div>`,
         )
         .join("");
@@ -231,9 +234,9 @@ function renderContent(id) {
       return personal_info
         .map(
           (c) => `
-        <div style="margin-bottom:10px">
-          <i class="${c.icon}" style="width:20px"></i>
-          <a href="${c.link}" target="_blank" style="color:#45567d;font-size:14px;margin-left:6px">${c.name}</a>
+        <div>
+          <i class="${c.icon}"></i>
+          <a href="${c.link}" target="_blank">${c.name}</a>
         </div>`,
         )
         .join("");
@@ -244,10 +247,10 @@ function renderContent(id) {
 }
 
 function bringToFront(id) {
-  const el = openWindows.get(id);
-  if (!el) return;
+  const window = openWindows.get(id);
+  if (!window) return;
   topZ++;
-  el.style.zIndex = topZ;
+  window.style.zIndex = topZ;
   updateActiveButton(id);
 }
 
@@ -258,10 +261,10 @@ function updateActiveButton(id) {
 }
 
 function closeWindow(id) {
-  const el = openWindows.get(id);
-  if (!el) return;
+  const window = openWindows.get(id);
+  if (!window) return;
 
-  el.remove();
+  window.remove();
   openWindows.delete(id);
 
   if (openWindows.size === 0) {
@@ -282,39 +285,63 @@ function closeWindow(id) {
 
   updateActiveButton(topWindow);
 }
-function makeDraggable(win, titlebar) {
+
+function resizeWindow(id) {
+  const window = openWindows.get(id);
+  if (!window) return;
+
+  if (window.dataset.maximized === "true") {
+    // Restaura
+    window.style.width = "50%";
+    window.style.height = "50%";
+    window.style.left = "5px";
+    window.style.top = "5px";
+
+    window.dataset.maximized = "false";
+  } else {
+    // Maximiza
+    window.style.width = "100%";
+    window.style.height = "100%";
+    window.style.left = "0";
+    window.style.top = "0";
+
+    window.dataset.maximized = "true";
+  }
+}
+
+function makeDraggable(window, titlebar) {
   let dragging = false;
   let startX, startY, startLeft, startTop;
 
-  titlebar.addEventListener("mousedown", (e) => {
-    if (e.target.tagName === "BUTTON") return;
-    const rect = win.getBoundingClientRect();
-    win.style.width = rect.width + "px";
-    win.style.height = rect.height + "px";
+  titlebar.addEventListener("mousedown", (element) => {
+    if (element.target.tagName === "BUTTON") return;
+    const rect = window.getBoundingClientRect();
+    window.style.width = rect.width + "px";
+    window.style.height = rect.height + "px";
     dragging = true;
-    startX = e.clientX;
-    startY = e.clientY;
-    startLeft = parseInt(win.style.left) || 0;
-    startTop = parseInt(win.style.top) || 0;
-    bringToFront(win.dataset.windowId);
-    e.preventDefault();
+    startX = element.clientX;
+    startY = element.clientY;
+    startLeft = parseInt(window.style.left) || 0;
+    startTop = parseInt(window.style.top) || 0;
+    bringToFront(window.dataset.windowId);
+    element.preventDefault();
   });
 
-  document.addEventListener("mousemove", (e) => {
+  document.addEventListener("mousemove", (element) => {
     if (!dragging) return;
     const bounds = desktop.getBoundingClientRect();
-    const maxLeft = bounds.width - win.offsetWidth;
-    const maxTop = bounds.height - win.offsetHeight;
+    const maxLeft = bounds.width - window.offsetWidth;
+    const maxTop = bounds.height - window.offsetHeight;
     const newLeft = Math.max(
       0,
-      Math.min(maxLeft, startLeft + (e.clientX - startX)),
+      Math.min(maxLeft, startLeft + (element.clientX - startX)),
     );
     const newTop = Math.max(
       0,
-      Math.min(maxTop, startTop + (e.clientY - startY)),
+      Math.min(maxTop, startTop + (element.clientY - startY)),
     );
-    win.style.left = newLeft + "px";
-    win.style.top = newTop + "px";
+    window.style.left = newLeft + "px";
+    window.style.top = newTop + "px";
   });
 
   document.addEventListener("mouseup", () => {
@@ -325,36 +352,47 @@ function makeDraggable(win, titlebar) {
 function createWindow(id) {
   topZ++;
 
-  const win = document.createElement("div");
-  win.className = "window";
-  win.dataset.windowId = id;
-  win.style.left = "5px";
-  win.style.top = "5px";
-  win.style.width = "95%";
-  win.style.height = "95%";
-  win.style.zIndex = topZ;
+  const window = document.createElement("div");
+  window.className = "window";
+  window.dataset.windowId = id;
+  window.style.left = "0";
+  window.style.top = "0";
+  window.style.width = "100%";
+  window.style.height = "100%";
+  window.style.zIndex = topZ;
+  window.dataset.maximized = "true";
 
   const titlebar = document.createElement("div");
   titlebar.className = "window-titlebar";
-  titlebar.innerHTML = `<span>${windowTitles[id] ?? id}</span><button title="Fechar">✕</button>`;
+  titlebar.innerHTML = `
+    <h2>${windowTitles[id] ?? id}</h2>
+    <div class="window-titlebar-buttons">
+     <button id="resize" title="Restaurar Tamanho"><i class="fa-regular fa-square"></i></button>
+     <button id="close" title="Fechar"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    `;
 
   const content = document.createElement("div");
   content.className = "window-content";
   content.innerHTML = renderContent(id);
 
   titlebar
-    .querySelector("button")
+    .querySelector("#resize")
+    .addEventListener("click", () => resizeWindow(id));
+
+  titlebar
+    .querySelector("#close")
     .addEventListener("click", () => closeWindow(id));
 
-  win.appendChild(titlebar);
-  win.appendChild(content);
+  window.appendChild(titlebar);
+  window.appendChild(content);
 
-  win.addEventListener("mousedown", () => bringToFront(id));
+  window.addEventListener("mousedown", () => bringToFront(id));
 
-  makeDraggable(win, titlebar);
+  makeDraggable(window, titlebar);
 
-  desktop.appendChild(win);
-  openWindows.set(id, win);
+  desktop.appendChild(window);
+  openWindows.set(id, window);
 
   updateActiveButton(id);
 }
