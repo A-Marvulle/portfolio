@@ -1,21 +1,5 @@
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
-const skills = [
-  { icon: "fa-brands fa-js", name: "JavaScript", color: "#f7df1e" },
-  { icon: "fa-brands fa-typescript", name: "TypeScript", color: "#3178C6" },
-  { icon: "fa-brands fa-vuejs", name: "Vue / Nuxt", color: "#41B883" },
-  // { icon: '', name: 'Nuxt' },
-  { icon: "fa-brands fa-php", name: "PHP", color: "#474a8a" },
-  { icon: "fa-brands fa-bootstrap", name: "Bootstrap", color: "#553C7B" },
-  { icon: "fa-brands fa-tailwind-css", name: "Tailwind", color: "#06B6D4" },
-  {
-    icon: "fa-brands fa-postgresql",
-    name: "MySql e Postgres",
-    color: "#F29111",
-  },
-  { icon: "fa-brands fa-docker", name: "Docker", color: "#0db7ed" },
-];
-
 const projects = [
   {
     img: "tcc",
@@ -45,25 +29,53 @@ const projects = [
 
 const work = [
   {
-    img: "logo-moreno",
-    name: "Moreno Advogados",
-    description:
-      "Manutenção do site (lowcode), suporte técnico aos colaboradores e alimentação do banco de dados interno.",
-    ocupation: "Estágio",
+    img: "logo-phd",
+    name: "PHD do Brasil",
+    description: "Desenvolver interfaces de usuário utilizando Nuxt e Vue.js",
+    ocupation: "Desenvolvedor Front-End",
     links: [
       {
-        url: "http://morenoadvogados.com.br/",
+        url: "https://phddobrasil.com.br/",
         title: "Site",
       },
     ],
-    skills: [
-      "HTML",
-      "CSS",
-      "Excel",
-      "Pacote Office",
-      "Suporte a Sistemas",
-      "Photoshop",
+    skills: ["JavaScript", "Vue", "Nuxt", "Nuxt UI", "Tailwind", "MVC", "Git"],
+  },
+  {
+    img: "logo-ideal",
+    name: "Grupo Ideal Trends",
+    description:
+      "Criação de sites com PHP, JavaScript e Bootstrap focados em SEO.",
+    ocupation: "Analista de Front-End Junior",
+    links: [
+      {
+        url: "https://idealtrends.com.br/",
+        title: "Site Grupo",
+      },
+      {
+        url: "https://www.doutoresdaweb.com.br/",
+        title: "Site Doutores",
+      },
     ],
+    skills: ["HTML", "CSS", "Javascript", "Bootstrap", "PHP", "MySql", "Git"],
+  },
+  {
+    img: "logo-aceda",
+    name: "ACEDA",
+    description:
+      "Criação de arte para mídias sociais e Desenvolvimento do Site com PHP e Bootstrap",
+    ocupation: "Web Designer",
+    links: [
+      {
+        url: "https://www.aceda.org.br/",
+        title: "Site",
+      },
+      {
+        url: "https://www.instagram.com/aceda.sampa/",
+        title: "Instagram",
+      },
+    ],
+    skills: ["Canva", "Design", "HTML", "CSS", "PHP", "Bootstrap", "Git"],
   },
   {
     img: "logo-morgan",
@@ -86,53 +98,25 @@ const work = [
     ],
   },
   {
-    img: "logo-aceda",
-    name: "ACEDA",
+    img: "logo-moreno",
+    name: "Moreno Advogados",
     description:
-      "Criação de arte para mídias sociais e Desenvolvimento do Site com PHP e Bootstrap",
-    ocupation: "Web Designer",
+      "Manutenção do site (lowcode), suporte técnico aos colaboradores e alimentação do banco de dados interno.",
+    ocupation: "Estágio",
     links: [
       {
-        url: "https://www.aceda.org.br/",
-        title: "Site",
-      },
-      {
-        url: "https://www.instagram.com/aceda.sampa/",
-        title: "Instagram",
-      },
-    ],
-    skills: ["Canva", "Design", "HTML", "CSS", "PHP", "Bootstrap", "Git"],
-  },
-  {
-    img: "logo-ideal",
-    name: "Grupo Ideal Trends",
-    description:
-      "Criação de sites com PHP, JavaScript e Bootstrap focados em SEO.",
-    ocupation: "Analista de Front-End Junior",
-    links: [
-      {
-        url: "https://idealtrends.com.br/",
-        title: "Site Grupo",
-      },
-      {
-        url: "https://www.doutoresdaweb.com.br/",
-        title: "Site Doutores",
-      },
-    ],
-    skills: ["HTML", "CSS", "Javascript", "Bootstrap", "PHP", "MySql", "Git"],
-  },
-  {
-    img: "logo-phd",
-    name: "PHD do Brasil",
-    description: "Desenvolver interfaces de usuário utilizando Nuxt e Vue.js",
-    ocupation: "Desenvolvedor Front-End",
-    links: [
-      {
-        url: "https://phddobrasil.com.br/",
+        url: "http://morenoadvogados.com.br/",
         title: "Site",
       },
     ],
-    skills: ["JavaScript", "Vue", "Nuxt", "Nuxt UI", "Tailwind", "MVC", "Git"],
+    skills: [
+      "HTML",
+      "CSS",
+      "Excel",
+      "Pacote Office",
+      "Suporte a Sistemas",
+      "Photoshop",
+    ],
   },
 ];
 
@@ -194,13 +178,19 @@ function renderContent(id) {
       return work
         .map(
           (w) => `
-        <div>
-          <strong>${w.name}</strong> — <em>${w.ocupation}</em>
-          <p>${w.description}</p>
-          <div>${w.skills.join(" · ")}</div>
-          <div>${w.links
-            .map((l) => `<a href="${l.url}" target="_blank">${l.title}</a>`)
-            .join("")}
+        <div class="content">
+          <img src="portfolio/src/assets/work/${w.img}.png" alt="${w.name}" title="${w.name}" />
+          <div class="content__info">
+            <h3>${w.name} <span>${w.ocupation}</span></h3>
+            <p>${w.description}</p>
+            <div class="content__skills">${w.skills.map((s) => `<span>${s}</span>`).join("")}</div>
+            <div class="content__links">${w.links
+              .map(
+                (l) =>
+                  `<a href="${l.url}" target="_blank" rel="noopener noreferrer" title="${l.title}">${l.title}</a>`,
+              )
+              .join("")}
+            </div>
           </div>
         </div>`,
         )
@@ -210,9 +200,12 @@ function renderContent(id) {
       return education
         .map(
           (e) => `
-        <div>
-          <strong>${e.name}</strong>
-          <p>${e.course}</p>
+        <div class="content">
+          <img src="portfolio/src/assets/education/${e.img}.png" alt="${e.name}" title="${e.name}" />
+          <div class="content__info">
+            <h3>${e.name}</h3>
+            <p>${e.course}</p>
+          </div>
         </div>`,
         )
         .join("");
@@ -221,11 +214,13 @@ function renderContent(id) {
       return projects
         .map(
           (p) => `
-        <div>
-          <strong><a href="${p.link}" target="_blank">${p.name}</a></strong>
-          <span>${p.inst}</span>
-          <p>${p.desc}</p>
-          <div>${p.stack.join(" · ")}</div>
+        <div class="content">
+          <img src="portfolio/src/assets/projects/${p.img}.png" alt="${p.name}" title="${p.name}" />
+          <div class="content__info">
+            <h3><a href="${p.link}" target="_blank" rel="noopener noreferrer">${p.name}</a></h3>
+            <p>${p.desc}</p>
+            <div class="content__skills">${p.stack.join(" · ")}</div>
+          </div>
         </div>`,
         )
         .join("");
@@ -236,7 +231,7 @@ function renderContent(id) {
           (c) => `
         <div>
           <i class="${c.icon}"></i>
-          <a href="${c.link}" target="_blank">${c.name}</a>
+          <a href="${c.link}" target="_blank" rel="noopener noreferrer">${c.name}</a>
         </div>`,
         )
         .join("");
@@ -261,11 +256,13 @@ function updateActiveButton(id) {
 }
 
 function closeWindow(id) {
-  const window = openWindows.get(id);
-  if (!window) return;
+  const win = openWindows.get(id);
+  if (!win) return;
 
-  window.remove();
   openWindows.delete(id);
+
+  win.classList.add("window-closing");
+  win.addEventListener("animationend", () => win.remove(), { once: true });
 
   if (openWindows.size === 0) {
     updateActiveButton(null);
@@ -275,8 +272,8 @@ function closeWindow(id) {
   let topWindow = null;
   let highestZ = -1;
 
-  openWindows.forEach((win, key) => {
-    const z = parseInt(win.style.zIndex);
+  openWindows.forEach((w, key) => {
+    const z = parseInt(w.style.zIndex);
     if (z > highestZ) {
       highestZ = z;
       topWindow = key;
@@ -291,7 +288,6 @@ function resizeWindow(id) {
   if (!window) return;
 
   if (window.dataset.maximized === "true") {
-    // Restaura
     window.style.width = "50%";
     window.style.height = "50%";
     window.style.left = "5px";
@@ -299,7 +295,6 @@ function resizeWindow(id) {
 
     window.dataset.maximized = "false";
   } else {
-    // Maximiza
     window.style.width = "100%";
     window.style.height = "100%";
     window.style.left = "0";
@@ -319,6 +314,7 @@ function makeDraggable(window, titlebar) {
     window.style.width = rect.width + "px";
     window.style.height = rect.height + "px";
     dragging = true;
+    window.classList.add("window-dragging");
     startX = element.clientX;
     startY = element.clientY;
     startLeft = parseInt(window.style.left) || 0;
@@ -345,6 +341,7 @@ function makeDraggable(window, titlebar) {
   });
 
   document.addEventListener("mouseup", () => {
+    if (dragging) window.classList.remove("window-dragging");
     dragging = false;
   });
 }
@@ -392,6 +389,7 @@ function createWindow(id) {
   makeDraggable(window, titlebar);
 
   desktop.appendChild(window);
+  window.classList.add("window-opening");
   openWindows.set(id, window);
 
   updateActiveButton(id);

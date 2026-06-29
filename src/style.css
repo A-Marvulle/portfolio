@@ -4,6 +4,7 @@
     button:not([disabled]),
     [role="button"]:not([disabled]) {
         cursor: pointer;
+        transition: 0.3s all;
     }
 }
 
@@ -27,6 +28,46 @@ desktop-manager {
 
 .window {
     @apply absolute min-w-280 min-h-180 bg-white border-none shadow-2xl resize overflow-auto pointer-events-auto;
+    transition:
+        width 0.3s ease,
+        height 0.3s ease,
+        left 0.3s ease,
+        top 0.3s ease;
+}
+
+@keyframes window-open {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes window-close {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+}
+
+.window-opening {
+    animation: window-open 0.2s ease forwards;
+}
+
+.window-closing {
+    animation: window-close 0.18s ease forwards;
+    pointer-events: none;
+}
+
+.window-dragging {
+    transition: none !important;
 }
 
 .window-titlebar {
@@ -50,5 +91,34 @@ desktop-manager {
 }
 
 .window-content {
-    @apply p-4;
+    @apply p-4 bg-[#f0f0f0];
+}
+
+.content {
+    @apply flex flex-row items-center gap-4 my-4 bg-white py-5 rounded-sm;
+}
+
+.content img {
+    @apply w-40 h-40 object-cover;
+}
+
+.content__info h3 {
+    @apply text-xl;
+}
+.content__info h3 > span {
+    @apply text-sm text-gray-500;
+}
+.content__skills {
+    @apply flex flex-row items-center gap-3 my-4;
+}
+.content__skills > span {
+    @apply text-sm m-0 bg-[#9e2a3a] text-white p-2 rounded-full min-w-15 flex items-center justify-center;
+}
+
+.content__links {
+    @apply flex flex-row items-center gap-3 my-4;
+}
+
+.content__links > a {
+    @apply bg-[#303841] text-white py-2 px-4 rounded-full min-w-20 flex items-center justify-center hover:outline-[#303841] focus:outline-[#303841] outline outline-transparent outline-offset-2;
 }

@@ -11,24 +11,96 @@
 
     <body>
         <main
-            class="screen relative h-screen w-full flex flex-col justify-between"
+            class="screen relative h-screen w-full flex flex-col justify-between bg-[linear-gradient(62deg,#181719_0%,#3a3d40_100%)]"
         >
             <aside
-                class="relative flex flex-col flex-1 justify-start items-end p-5 bg-blue-400"
+                class="relative flex flex-col flex-1 justify-start items-end p-5"
             >
-                <button data-modal="work">Work</button>
+                <div
+                    class="absolute top-3 left-3 p-5 shadow-xl bg-[#eae672] max-w-88 text-center"
+                >
+                    <h1 class="text-2xl">
+                        Olá! Meu nome é <strong>Alfredo</strong>
+                        <span class="block text-lg"
+                            >Sou um desenvolvedor
+                            <strong>Front-End</strong></span
+                        >
+                    </h1>
+                    <div
+                        class="flex gap-3 mt-7 text-[32px] flex-wrap items-center justify-center"
+                    >
+                        <p>
+                            <i class="fa-brands fa-js" title="JavaScript"></i>
+                        </p>
+                        <p>
+                            <i
+                                class="fa-brands fa-typescript"
+                                title="TypeScript"
+                            ></i>
+                        </p>
+                        <p><i class="fa-brands fa-vuejs" title="Vue"></i></p>
+                        <p><i class="fa-brands fa-php" title="PHP"></i></p>
+                        <p>
+                            <i
+                                class="fa-brands fa-bootstrap"
+                                title="Bootstrap"
+                            ></i>
+                        </p>
+                        <p>
+                            <i
+                                class="fa-brands fa-tailwind-css"
+                                title="Tailwind CSS"
+                            ></i>
+                        </p>
+                        <p>
+                            <i
+                                class="fa-brands fa-postgresql"
+                                title="PostgreSQL"
+                            ></i>
+                        </p>
+                        <p>
+                            <i class="fa-brands fa-docker" title="Docker"></i>
+                        </p>
+                    </div>
+                </div>
 
-                <button data-modal="school">School</button>
+                <button
+                    data-modal="work"
+                    class="text-center flex flex-col justify-center items-center w-30 h-30 gap-4 bg-black/10 text-white my-3 rounded-sm hover:text-[#9e2a3a]"
+                >
+                    <i class="fa-regular fa-building"></i>
+                    <span class="block">Experiência</span>
+                </button>
 
-                <button data-modal="projects">Projects</button>
+                <button
+                    data-modal="school"
+                    class="text-center flex flex-col justify-center items-center w-30 h-30 gap-4 bg-black/10 text-white my-3 rounded-sm hover:text-[#9e2a3a]"
+                >
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span class="block">Escolaridade</span>
+                </button>
 
-                <button data-modal="contact">Contact Me</button>
+                <button
+                    data-modal="projects"
+                    class="text-center flex flex-col justify-center items-center w-30 h-30 gap-4 bg-black/10 text-white my-3 rounded-sm hover:text-[#9e2a3a]"
+                >
+                    <i class="fa-solid fa-code"></i>
+                    <span class="block">Projetos</span>
+                </button>
+
+                <button
+                    data-modal="contact"
+                    class="text-center flex flex-col justify-center items-center w-30 h-30 gap-4 bg-black/10 text-white my-3 rounded-sm hover:text-[#9e2a3a]"
+                >
+                    <i class="fa-regular fa-envelope"></i>
+                    <span class="block">Contato</span>
+                </button>
 
                 <desktop-manager></desktop-manager>
             </aside>
 
             <nav
-                class="bar flex gap-8 bg-[linear-gradient(62deg,#181719_0%,#3a3d40_100%)] text-[#f0f0f0]"
+                class="bar flex gap-8 text-[#f0f0f0] shadow backdrop-blur-md bg-[#333]/70 border border-x-transparent border-y-white/20"
             >
                 <button
                     class="lg:ms-5 nav__btn"
