@@ -10,7 +10,9 @@
     </head>
 
     <body>
-        <main class="screen relative h-screen w-full flex flex-col justify-between">
+        <main
+            class="screen relative h-screen w-full flex flex-col justify-between"
+        >
             <aside
                 class="relative flex flex-col flex-1 justify-start items-end p-5 bg-blue-400"
             >
@@ -22,18 +24,43 @@
 
                 <button data-modal="contact">Contact Me</button>
 
-                <!-- onde todas as janelas serão renderizadas -->
                 <desktop-manager></desktop-manager>
             </aside>
 
-            <nav class="bar flex gap-4 p-5 bg-amber-300">
-                <button data-modal="work">Work</button>
+            <nav
+                class="bar flex gap-8 bg-[linear-gradient(62deg,#181719_0%,#3a3d40_100%)] text-[#f0f0f0]"
+            >
+                <button
+                    class="lg:ms-5 nav__btn"
+                    title="Minhas experiências"
+                    data-modal="work"
+                >
+                    <i class="fa-regular fa-building"></i>
+                </button>
 
-                <button data-modal="school">School</button>
+                <button
+                    class="nav__btn"
+                    title="Minhas experiências acadêmicas"
+                    data-modal="school"
+                >
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </button>
 
-                <button data-modal="projects">Projects</button>
+                <button
+                    class="nav__btn"
+                    title="Meus Projetos"
+                    data-modal="projects"
+                >
+                    <i class="fa-solid fa-code"></i>
+                </button>
 
-                <button data-modal="contact">Contact Me</button>
+                <button
+                    class="nav__btn"
+                    title="Meus Contatos"
+                    data-modal="contact"
+                >
+                    <i class="fa-regular fa-envelope"></i>
+                </button>
             </nav>
         </main>
 

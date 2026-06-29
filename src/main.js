@@ -177,10 +177,8 @@ const personal_info = [
   },
 ];
 
-// --- Window Manager ---
-
 const desktop = document.querySelector("desktop-manager");
-const openWindows = new Map(); // id -> HTMLElement
+const openWindows = new Map();
 let topZ = 100;
 
 const windowTitles = {
@@ -250,15 +248,40 @@ function bringToFront(id) {
   if (!el) return;
   topZ++;
   el.style.zIndex = topZ;
+  updateActiveButton(id);
+}
+
+function updateActiveButton(id) {
+  document.querySelectorAll("[data-modal]").forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.modal === id);
+  });
 }
 
 function closeWindow(id) {
   const el = openWindows.get(id);
   if (!el) return;
+
   el.remove();
   openWindows.delete(id);
-}
 
+  if (openWindows.size === 0) {
+    updateActiveButton(null);
+    return;
+  }
+
+  let topWindow = null;
+  let highestZ = -1;
+
+  openWindows.forEach((win, key) => {
+    const z = parseInt(win.style.zIndex);
+    if (z > highestZ) {
+      highestZ = z;
+      topWindow = key;
+    }
+  });
+
+  updateActiveButton(topWindow);
+}
 function makeDraggable(win, titlebar) {
   let dragging = false;
   let startX, startY, startLeft, startTop;
@@ -332,6 +355,8 @@ function createWindow(id) {
 
   desktop.appendChild(win);
   openWindows.set(id, win);
+
+  updateActiveButton(id);
 }
 
 function toggleWindow(id) {
