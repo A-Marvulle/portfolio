@@ -122,9 +122,9 @@ const work = [
 
 const education = [
   {
-    img: "logo-cps",
-    name: "Etec Raposo",
-    course: "Técnico de Informática Integrado ao Ensino Médio",
+    img: "logo-senac",
+    name: "Senac",
+    course: "Pós Graduação em Engenharia da Qualidade de Software",
   },
   {
     img: "logo-ifsp",
@@ -132,9 +132,9 @@ const education = [
     course: "Tecnologia em Análise e Desenvolvimento de Sistemas",
   },
   {
-    img: "logo-senac",
-    name: "Senac",
-    course: "Pós Graduação em Engenharia da Qualidade de Software",
+    img: "logo-cps",
+    name: "Etec Raposo",
+    course: "Técnico de Informática Integrado ao Ensino Médio",
   },
 ];
 
@@ -217,9 +217,9 @@ function renderContent(id) {
         <div class="content">
           <img src="portfolio/src/assets/projects/${p.img}.png" alt="${p.name}" title="${p.name}" />
           <div class="content__info">
-            <h3><a href="${p.link}" target="_blank" rel="noopener noreferrer">${p.name}</a></h3>
+            <h3><a class="project__link" href="${p.link}" target="_blank" rel="noopener noreferrer" title="${p.name}">${p.name}</a></h3>
             <p>${p.desc}</p>
-            <div class="content__skills">${p.stack.join(" · ")}</div>
+            <div class="content__skills">${p.stack.map((s) => `<span>${s}</span>`).join("")}</div>
           </div>
         </div>`,
         )
@@ -229,9 +229,9 @@ function renderContent(id) {
       return personal_info
         .map(
           (c) => `
-        <div>
+        <div class="content__contact">
           <i class="${c.icon}"></i>
-          <a href="${c.link}" target="_blank" rel="noopener noreferrer">${c.name}</a>
+          <a href="${c.link}" target="_blank" rel="noopener noreferrer" title="${c.name}">${c.name}</a>
         </div>`,
         )
         .join("");
