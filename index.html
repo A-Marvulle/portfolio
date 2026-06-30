@@ -62,66 +62,62 @@
                 </a>
             </li>
 
-            <li>
-                <a href="#education"
-                    class="link_btn uppercase hover:bg-[#9e2a3a] p-3 rounded-full text-[12px] transition ease-in-out">
+                <button
+                    data-modal="work"
+                    class="my-3 flex h-30 w-30 flex-col items-center justify-center gap-4 rounded-sm bg-black/10 text-center text-white hover:text-[#9e2a3a]"
+                >
+                    <i class="fa-regular fa-building"></i>
+                    <span class="block">Experiência</span>
+                </button>
+
+                <button
+                    data-modal="school"
+                    class="my-3 flex h-30 w-30 flex-col items-center justify-center gap-4 rounded-sm bg-black/10 text-center text-white hover:text-[#9e2a3a]"
+                >
                     <i class="fa-solid fa-graduation-cap"></i>
-                    Educação
-                </a>
-            </li>
+                    <span class="block">Escolaridade</span>
+                </button>
 
-            <li>
-                <a href="#infoId"
-                    class="link_btn uppercase hover:bg-[#9e2a3a] p-3 rounded-full text-[12px] transition ease-in-out">
-                    <i class="fa-solid fa-paper-plane"></i>
-                    Contato
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <main>
-        <section class="py-5 text-center bg-[linear-gradient(62deg,#3a3d40_0%,#181719_100%)] text-white lg:h-175"
-            id="home">
-            <div class="container mx-auto h-full  flex flex-col justify-around items-center">
-                <div>
-                    <h1 class="text-[45px] my-10 lg:text-[72px]">Olá! Meu nome é Alfredo</h1>
-                    <p class="text-3xl italic text-[#9e2a3a]">Sou um desenvolvedor Front-End</p>
-                </div>
-                <h2 class="text-center text-3xl my-5">Base Tecnológica</h2>
-                <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3" id="skills"></div>
-            </div>
-        </section>
-        <section class="py-5">
-            <h2 class="title">Meus Projetos Recentes</h2>
-            <div class="container mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-3 text-center lg:text-start gap-4" id="projects"></div>
-            </div>
-        </section>
-        <section class="py-5 bg-[#333]">
-            <div class="container mx-auto">
-                <h2 class="title">Minhas experiências Profissionais</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-2 text-center lg:text-start gap-4" id="work"></div>
-            </div>
-        </section>
-        <section class="py-5">
-            <div class="container mx-auto">
-                <h2 class="title">Minha Trajetória Acadêmica</h2>
-                <div id="education"></div>
-            </div>
-        </section>
-    </main>
+                <button
+                    data-modal="projects"
+                    class="my-3 flex h-30 w-30 flex-col items-center justify-center gap-4 rounded-sm bg-black/10 text-center text-white hover:text-[#9e2a3a]"
+                >
+                    <i class="fa-solid fa-code"></i>
+                    <span class="block">Projetos</span>
+                </button>
 
-    <footer class="bg-[#333] py-5">
-        <section class="container mx-auto">
-            <h2 class="title">Entre em contato</h2>
-            <div id="infoId"></div>
-        </section>
-        <div class="text-center py-5">
-            <a href="./public/cv-alfredo.pdf" class="button hover:cursor-pointer" title="Baixar Currículo"
-                target="_blank" rel="noopener noreferrer">Baixar Currículo</a>
-        </div>
-    </footer>
-    <script type="module" src="/src/main.js"></script>
-</body>
+                <button
+                    data-modal="contact"
+                    class="my-3 flex h-30 w-30 flex-col items-center justify-center gap-4 rounded-sm bg-black/10 text-center text-white hover:text-[#9e2a3a]"
+                >
+                    <i class="fa-regular fa-envelope"></i>
+                    <span class="block">Contato</span>
+                </button>
 
+                <desktop-manager></desktop-manager>
+            </aside>
+
+            <nav
+                class="sticky bottom-0 flex w-full gap-8 border border-x-transparent border-y-white/20 bg-[#333]/70 text-[#f0f0f0] shadow backdrop-blur-md"
+            >
+                <button class="nav__btn lg:ms-5" title="Minhas experiências" data-modal="work">
+                    <i class="fa-regular fa-building"></i>
+                </button>
+
+                <button class="nav__btn" title="Minhas experiências acadêmicas" data-modal="school">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </button>
+
+                <button class="nav__btn" title="Meus Projetos" data-modal="projects">
+                    <i class="fa-solid fa-code"></i>
+                </button>
+
+                <button class="nav__btn" title="Meus Contatos" data-modal="contact">
+                    <i class="fa-regular fa-envelope"></i>
+                </button>
+            </nav>
+        </main>
+
+        <script type="module" src="/src/main.js"></script>
+    </body>
 </html>

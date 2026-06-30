@@ -1,24 +1,135 @@
 @import "tailwindcss";
 
-@layer components {
-  .card__skills .card__content {@apply flex flex-col gap-3 md:flex-row justify-center items-center}
-  .card__project, .card__work {@apply h-full rounded-2xl shadow-md relative}
-  .card__project .card__project-img {@apply w-90 h-90}
-  .badge {@apply inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs bg-[#9e2a3a]}
-  .button {@apply inline-flex items-center gap-x-1.5 py-3 px-6 rounded-[12px] text-[18px] bg-transparent transition duration-300 ease-in-out border border-[#e3e3e3] hover:bg-[#9e2a3e] focus-within:bg-[#9e2a3e] focus-within:border-none focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#9e2a3e]}
-  .title {@apply  text-center text-3xl my-5 uppercase tracking-[1.6px]}
-}
-:root {
-    scroll-behavior: smooth;
-
-}
-body {background: #303841; color: #f0f0f0}
-.card__skills .card__content>div:before {content: '';position: absolute;  left: 0;  right: 0;  width: 100%;  border-radius: inherit;  height: 100%;  border: 2px solid var(--item-color);  animation: clippath 3s infinite linear;}
-
-@keyframes clippath {
-    0%, 100% {clip-path: inset(0 0 95% 0);}
-    25% {clip-path: inset(0 95% 0 0);}
-    50% {clip-path: inset(95% 0 0 0);}
-    75% {clip-path: inset(0 0 0 95%);}
+/* DEFAULTS */
+@layer base {
+  button:not([disabled]),
+  [role="button"]:not([disabled]) {
+    cursor: pointer;
+    transition: 0.3s all;
+  }
 }
 
+/* BODY */
+.nav__btn {
+  @apply flex h-10 w-10 items-center justify-center rounded-sm outline outline-transparent transition-all duration-300 hover:outline-[#9e2a3a] focus:outline-[#9e2a3a];
+}
+.nav__btn:is(.active) {
+  @apply text-[#9e2a3a] inset-shadow-sm inset-shadow-[#9e2a3a];
+}
+desktop-manager {
+  @apply pointer-events-none absolute inset-0 overflow-hidden;
+}
+
+/* WINDOW */
+.window {
+  @apply pointer-events-auto absolute min-h-50 min-w-50 resize overflow-auto border-none bg-[#f0f0f0] shadow-2xl;
+  transition:
+    width 0.3s ease,
+    height 0.3s ease,
+    left 0.3s ease,
+    top 0.3s ease;
+}
+@keyframes window-open {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes window-close {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+}
+.window-opening {
+  animation: window-open 0.2s ease forwards;
+}
+.window-closing {
+  animation: window-close 0.18s ease forwards;
+  pointer-events: none;
+}
+.window-dragging {
+  transition: none !important;
+}
+.window-titlebar {
+  @apply sticky top-0 flex cursor-move items-center justify-between bg-[linear-gradient(62deg,#3a3d40_0%,#181719_100%)] p-4 text-white;
+}
+.window-titlebar-buttons {
+  @apply flex flex-row items-center justify-center gap-3;
+}
+.window-titlebar-buttons button {
+  @apply flex h-5 w-5 items-center justify-center rounded-full border-none text-[12px];
+}
+.window-titlebar-buttons #resize {
+  @apply bg-blue-800 text-[#f0f0f0];
+}
+.window-titlebar-buttons #close {
+  @apply bg-red-800 text-[#f0f0f0];
+}
+.window-content {
+  @apply container mx-auto;
+}
+
+/* CARDS */
+.content {
+  @apply my-4 flex flex-col flex-wrap items-center gap-4 rounded-sm bg-white py-5 lg:flex-row;
+}
+.content img {
+  @apply h-40 w-40 object-cover p-4;
+}
+.content__info {
+  @apply p-4;
+}
+.content__info h3 {
+  @apply text-xl;
+}
+.content__info h3 > span {
+  @apply text-sm text-gray-500;
+}
+.content__skills {
+  @apply my-4 flex flex-col flex-wrap items-center gap-3 lg:flex-row;
+}
+.content__skills > span {
+  @apply m-0 flex min-w-15 items-center justify-center rounded-full bg-[#9e2a3a] p-2 text-sm text-white;
+}
+.content__links {
+  @apply my-4 flex flex-row items-center gap-3;
+}
+.content__links > a {
+  @apply flex min-w-20 items-center justify-center rounded-full bg-[#303841] px-4 py-2 text-white outline outline-offset-2 outline-transparent hover:outline-[#303841] focus:outline-[#303841];
+}
+.project__link {
+  @apply hover:text-[#9e2a3a];
+}
+.project__link::after {
+  content: "\f08e";
+  font-family: "FontAwesome";
+  margin-left: 8px;
+  font-size: 12px;
+}
+
+.content__contact {
+  @apply relative mx-auto my-5 flex h-20 w-80 flex-col items-center justify-center gap-3 rounded-xl bg-white transition-all duration-300 hover:text-[#9e2a3a];
+}
+
+.content__contact i {
+  @apply text-2xl;
+}
+
+.content__contact a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
