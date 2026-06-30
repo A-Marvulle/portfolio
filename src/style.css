@@ -2,140 +2,134 @@
 
 /* DEFAULTS */
 @layer base {
-    button:not([disabled]),
-    [role="button"]:not([disabled]) {
-        cursor: pointer;
-        transition: 0.3s all;
-    }
+  button:not([disabled]),
+  [role="button"]:not([disabled]) {
+    cursor: pointer;
+    transition: 0.3s all;
+  }
 }
 
 /* BODY */
 .nav__btn {
-    @apply flex justify-center items-center
-        h-10 w-10
-        rounded-sm
-        transition-all duration-300
-        outline outline-transparent
-        focus:outline-[#9e2a3a]
-        hover:outline-[#9e2a3a];
+  @apply flex h-10 w-10 items-center justify-center rounded-sm outline outline-transparent transition-all duration-300 hover:outline-[#9e2a3a] focus:outline-[#9e2a3a];
 }
 .nav__btn:is(.active) {
-    @apply text-[#9e2a3a] inset-shadow-sm inset-shadow-[#9e2a3a];
+  @apply text-[#9e2a3a] inset-shadow-sm inset-shadow-[#9e2a3a];
 }
 desktop-manager {
-    @apply absolute inset-0  pointer-events-none overflow-hidden;
+  @apply pointer-events-none absolute inset-0 overflow-hidden;
 }
 
 /* WINDOW */
 .window {
-    @apply absolute min-w-50 min-h-50 bg-[#f0f0f0] border-none shadow-2xl resize overflow-auto pointer-events-auto;
-    transition:
-        width 0.3s ease,
-        height 0.3s ease,
-        left 0.3s ease,
-        top 0.3s ease;
+  @apply pointer-events-auto absolute min-h-50 min-w-50 resize overflow-auto border-none bg-[#f0f0f0] shadow-2xl;
+  transition:
+    width 0.3s ease,
+    height 0.3s ease,
+    left 0.3s ease,
+    top 0.3s ease;
 }
 @keyframes window-open {
-    from {
-        opacity: 0;
-        transform: scale(0.85);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 @keyframes window-close {
-    from {
-        opacity: 1;
-        transform: scale(1);
-    }
-    to {
-        opacity: 0;
-        transform: scale(0.85);
-    }
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.85);
+  }
 }
 .window-opening {
-    animation: window-open 0.2s ease forwards;
+  animation: window-open 0.2s ease forwards;
 }
 .window-closing {
-    animation: window-close 0.18s ease forwards;
-    pointer-events: none;
+  animation: window-close 0.18s ease forwards;
+  pointer-events: none;
 }
 .window-dragging {
-    transition: none !important;
+  transition: none !important;
 }
 .window-titlebar {
-    @apply flex justify-between items-center p-4  bg-[linear-gradient(62deg,#3a3d40_0%,#181719_100%)] text-white cursor-move sticky top-0;
+  @apply sticky top-0 flex cursor-move items-center justify-between bg-[linear-gradient(62deg,#3a3d40_0%,#181719_100%)] p-4 text-white;
 }
 .window-titlebar-buttons {
-    @apply flex flex-row gap-3 items-center justify-center;
+  @apply flex flex-row items-center justify-center gap-3;
 }
 .window-titlebar-buttons button {
-    @apply w-5 h-5 border-none rounded-full flex items-center justify-center text-[12px];
+  @apply flex h-5 w-5 items-center justify-center rounded-full border-none text-[12px];
 }
 .window-titlebar-buttons #resize {
-    @apply bg-blue-800 text-[#f0f0f0];
+  @apply bg-blue-800 text-[#f0f0f0];
 }
 .window-titlebar-buttons #close {
-    @apply bg-red-800 text-[#f0f0f0];
+  @apply bg-red-800 text-[#f0f0f0];
 }
 .window-content {
-    @apply container mx-auto;
+  @apply container mx-auto;
 }
 
 /* CARDS */
 .content {
-    @apply flex flex-col lg:flex-row flex-wrap items-center gap-4 my-4 bg-white py-5 rounded-sm;
+  @apply my-4 flex flex-col flex-wrap items-center gap-4 rounded-sm bg-white py-5 lg:flex-row;
 }
 .content img {
-    @apply w-40 h-40 object-cover p-4;
+  @apply h-40 w-40 object-cover p-4;
 }
 .content__info {
-    @apply p-4;
+  @apply p-4;
 }
 .content__info h3 {
-    @apply text-xl;
+  @apply text-xl;
 }
 .content__info h3 > span {
-    @apply text-sm text-gray-500;
+  @apply text-sm text-gray-500;
 }
 .content__skills {
-    @apply flex flex-col lg:flex-row flex-wrap items-center gap-3 my-4;
+  @apply my-4 flex flex-col flex-wrap items-center gap-3 lg:flex-row;
 }
 .content__skills > span {
-    @apply text-sm m-0 bg-[#9e2a3a] text-white p-2 rounded-full min-w-15 flex items-center justify-center;
+  @apply m-0 flex min-w-15 items-center justify-center rounded-full bg-[#9e2a3a] p-2 text-sm text-white;
 }
 .content__links {
-    @apply flex flex-row items-center gap-3 my-4;
+  @apply my-4 flex flex-row items-center gap-3;
 }
 .content__links > a {
-    @apply bg-[#303841] text-white py-2 px-4 rounded-full min-w-20 flex items-center justify-center hover:outline-[#303841] focus:outline-[#303841] outline outline-transparent outline-offset-2;
+  @apply flex min-w-20 items-center justify-center rounded-full bg-[#303841] px-4 py-2 text-white outline outline-offset-2 outline-transparent hover:outline-[#303841] focus:outline-[#303841];
 }
 .project__link {
-    @apply hover:text-[#9e2a3a];
+  @apply hover:text-[#9e2a3a];
 }
 .project__link::after {
-    content: "\f08e";
-    font-family: "FontAwesome";
-    margin-left: 8px;
-    font-size: 12px;
+  content: "\f08e";
+  font-family: "FontAwesome";
+  margin-left: 8px;
+  font-size: 12px;
 }
 
 .content__contact {
-    @apply flex relative flex-col items-center justify-center gap-3 mx-auto h-20 w-80 bg-white my-5 rounded-xl hover:text-[#9e2a3a] transition-all duration-300;
+  @apply relative mx-auto my-5 flex h-20 w-80 flex-col items-center justify-center gap-3 rounded-xl bg-white transition-all duration-300 hover:text-[#9e2a3a];
 }
 
 .content__contact i {
-    @apply text-2xl;
+  @apply text-2xl;
 }
 
 .content__contact a:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
 }

@@ -12,53 +12,30 @@
     </head>
 
     <body>
-        <main
-            class="screen relative h-screen w-full flex flex-col justify-between bg-[linear-gradient(62deg,#181719_0%,#3a3d40_100%)]"
-        >
-            <aside
-                class="relative flex flex-col flex-1 justify-center lg:justify-start items-center lg:items-end p-5"
-            >
-                <div
-                    class="lg:absolute top-3 left-3 p-5 shadow-xl bg-[#eae672] max-w-88 text-center"
-                >
+        <main class="screen relative flex h-screen w-full flex-col justify-between bg-[linear-gradient(62deg,#181719_0%,#3a3d40_100%)]">
+            <aside class="relative flex flex-1 flex-col items-center justify-center p-5 lg:items-end lg:justify-start">
+                <div class="top-3 left-3 max-w-88 bg-[#eae672] p-5 text-center shadow-xl lg:absolute">
                     <h1 class="text-2xl">
                         Olá! Meu nome é <strong>Alfredo</strong>
-                        <span class="block text-lg"
-                            >Sou um desenvolvedor
-                            <strong>Front-End</strong></span
-                        >
+                        <span class="block text-lg">Sou um desenvolvedor <strong>Front-End</strong></span>
                     </h1>
-                    <div
-                        class="flex gap-3 mt-7 text-[32px] flex-wrap items-center justify-center"
-                    >
+                    <div class="mt-7 flex flex-wrap items-center justify-center gap-3 text-[32px]">
                         <p>
                             <i class="fa-brands fa-js" title="JavaScript"></i>
                         </p>
                         <p>
-                            <i
-                                class="fa-brands fa-typescript"
-                                title="TypeScript"
-                            ></i>
+                            <i class="fa-brands fa-typescript" title="TypeScript"></i>
                         </p>
                         <p><i class="fa-brands fa-vuejs" title="Vue"></i></p>
                         <p><i class="fa-brands fa-php" title="PHP"></i></p>
                         <p>
-                            <i
-                                class="fa-brands fa-bootstrap"
-                                title="Bootstrap"
-                            ></i>
+                            <i class="fa-brands fa-bootstrap" title="Bootstrap"></i>
                         </p>
                         <p>
-                            <i
-                                class="fa-brands fa-tailwind-css"
-                                title="Tailwind CSS"
-                            ></i>
+                            <i class="fa-brands fa-tailwind-css" title="Tailwind CSS"></i>
                         </p>
                         <p>
-                            <i
-                                class="fa-brands fa-postgresql"
-                                title="PostgreSQL"
-                            ></i>
+                            <i class="fa-brands fa-postgresql" title="PostgreSQL"></i>
                         </p>
                         <p>
                             <i class="fa-brands fa-docker" title="Docker"></i>
@@ -68,7 +45,7 @@
 
                 <button
                     data-modal="work"
-                    class="text-center flex flex-col justify-center items-center w-30 h-30 gap-4 bg-black/10 text-white my-3 rounded-sm hover:text-[#9e2a3a]"
+                    class="my-3 flex h-30 w-30 flex-col items-center justify-center gap-4 rounded-sm bg-black/10 text-center text-white hover:text-[#9e2a3a]"
                 >
                     <i class="fa-regular fa-building"></i>
                     <span class="block">Experiência</span>
@@ -76,7 +53,7 @@
 
                 <button
                     data-modal="school"
-                    class="text-center flex flex-col justify-center items-center w-30 h-30 gap-4 bg-black/10 text-white my-3 rounded-sm hover:text-[#9e2a3a]"
+                    class="my-3 flex h-30 w-30 flex-col items-center justify-center gap-4 rounded-sm bg-black/10 text-center text-white hover:text-[#9e2a3a]"
                 >
                     <i class="fa-solid fa-graduation-cap"></i>
                     <span class="block">Escolaridade</span>
@@ -84,7 +61,7 @@
 
                 <button
                     data-modal="projects"
-                    class="text-center flex flex-col justify-center items-center w-30 h-30 gap-4 bg-black/10 text-white my-3 rounded-sm hover:text-[#9e2a3a]"
+                    class="my-3 flex h-30 w-30 flex-col items-center justify-center gap-4 rounded-sm bg-black/10 text-center text-white hover:text-[#9e2a3a]"
                 >
                     <i class="fa-solid fa-code"></i>
                     <span class="block">Projetos</span>
@@ -92,7 +69,7 @@
 
                 <button
                     data-modal="contact"
-                    class="text-center flex flex-col justify-center items-center w-30 h-30 gap-4 bg-black/10 text-white my-3 rounded-sm hover:text-[#9e2a3a]"
+                    class="my-3 flex h-30 w-30 flex-col items-center justify-center gap-4 rounded-sm bg-black/10 text-center text-white hover:text-[#9e2a3a]"
                 >
                     <i class="fa-regular fa-envelope"></i>
                     <span class="block">Contato</span>
@@ -102,37 +79,21 @@
             </aside>
 
             <nav
-                class="sticky bottom-0 w-full flex gap-8 text-[#f0f0f0] shadow backdrop-blur-md bg-[#333]/70 border border-x-transparent border-y-white/20"
+                class="sticky bottom-0 flex w-full gap-8 border border-x-transparent border-y-white/20 bg-[#333]/70 text-[#f0f0f0] shadow backdrop-blur-md"
             >
-                <button
-                    class="lg:ms-5 nav__btn"
-                    title="Minhas experiências"
-                    data-modal="work"
-                >
+                <button class="nav__btn lg:ms-5" title="Minhas experiências" data-modal="work">
                     <i class="fa-regular fa-building"></i>
                 </button>
 
-                <button
-                    class="nav__btn"
-                    title="Minhas experiências acadêmicas"
-                    data-modal="school"
-                >
+                <button class="nav__btn" title="Minhas experiências acadêmicas" data-modal="school">
                     <i class="fa-solid fa-graduation-cap"></i>
                 </button>
 
-                <button
-                    class="nav__btn"
-                    title="Meus Projetos"
-                    data-modal="projects"
-                >
+                <button class="nav__btn" title="Meus Projetos" data-modal="projects">
                     <i class="fa-solid fa-code"></i>
                 </button>
 
-                <button
-                    class="nav__btn"
-                    title="Meus Contatos"
-                    data-modal="contact"
-                >
+                <button class="nav__btn" title="Meus Contatos" data-modal="contact">
                     <i class="fa-regular fa-envelope"></i>
                 </button>
             </nav>
