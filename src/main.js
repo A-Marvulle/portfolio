@@ -161,7 +161,7 @@ function renderContent(id) {
                 .map(
                     (w) => `
         <div class="content">
-          <img src="portfolio/src/assets/work/${w.img}.png" alt="${w.name}" title="${w.name}" />
+          <img src="${import.meta.env.BASE_URL}images/work/${w.img}.png" alt="${w.name}" title="${w.name}" />
           <div class="content__info">
             <h3>${w.name} <span>${w.ocupation}</span></h3>
             <p>${w.description}</p>
@@ -180,7 +180,7 @@ function renderContent(id) {
                 .map(
                     (e) => `
         <div class="content">
-          <img src="portfolio/src/assets/education/${e.img}.png" alt="${e.name}" title="${e.name}" />
+          <img src="${import.meta.env.BASE_URL}images/education/${e.img}.png" alt="${e.name}" title="${e.name}" />
           <div class="content__info">
             <h3>${e.name}</h3>
             <p>${e.course}</p>
@@ -194,7 +194,7 @@ function renderContent(id) {
                 .map(
                     (p) => `
         <div class="content">
-          <img src="portfolio/src/assets/projects/${p.img}.png" alt="${p.name}" title="${p.name}" />
+          <img src="${import.meta.env.BASE_URL}images/projects/${p.img}.png" alt="${p.name}" title="${p.name}" />
           <div class="content__info">
             <h3><a class="project__link" href="${p.link}" target="_blank" rel="noopener noreferrer" title="${p.name}">${p.name}</a></h3>
             <p>${p.desc}</p>
