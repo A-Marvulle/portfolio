@@ -28,7 +28,7 @@ desktop-manager {
 
 /* WINDOW */
 .window {
-    @apply absolute min-w-50 min-h-50 bg-white border-none shadow-2xl resize overflow-auto pointer-events-auto;
+    @apply absolute min-w-50 min-h-50 bg-[#f0f0f0] border-none shadow-2xl resize overflow-auto pointer-events-auto;
     transition:
         width 0.3s ease,
         height 0.3s ease,
@@ -81,15 +81,18 @@ desktop-manager {
     @apply bg-red-800 text-[#f0f0f0];
 }
 .window-content {
-    @apply p-4 bg-[#f0f0f0] h-full;
+    @apply container mx-auto;
 }
 
 /* CARDS */
 .content {
-    @apply flex flex-row items-center gap-4 my-4 bg-white py-5 rounded-sm;
+    @apply flex flex-col lg:flex-row flex-wrap items-center gap-4 my-4 bg-white py-5 rounded-sm;
 }
 .content img {
-    @apply w-40 h-40 object-cover;
+    @apply w-40 h-40 object-cover p-4;
+}
+.content__info {
+    @apply p-4;
 }
 .content__info h3 {
     @apply text-xl;
@@ -98,7 +101,7 @@ desktop-manager {
     @apply text-sm text-gray-500;
 }
 .content__skills {
-    @apply flex flex-row items-center gap-3 my-4;
+    @apply flex flex-col lg:flex-row flex-wrap items-center gap-3 my-4;
 }
 .content__skills > span {
     @apply text-sm m-0 bg-[#9e2a3a] text-white p-2 rounded-full min-w-15 flex items-center justify-center;
