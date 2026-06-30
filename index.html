@@ -1,66 +1,47 @@
-<!DOCTYPE html>
-<html lang="PT-BR">
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#9e2a3a" />
+        <link rel="icon" href="/img/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <title>Portfolio</title>
 
-<head>
-    <meta name="theme-color" content="#9e2a3a">
-    <meta charset="UTF-8">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <title>Portfolio</title>
-    <link href="./src/style.css" rel="stylesheet">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/src/style.css" />
+    </head>
 
-</head>
-
-<body>
-    <nav
-        class="fixed w-[95vw] min-w-87.5 max-w-fit shadow h-16 p-4 mx-0 mt-2 top-0 left-1/2 -translate-x-1/2 rounded-full backdrop-blur-md bg-[#333]/70 border border-white/20 z-90 group">
-
-        <input type="checkbox" id="navbar__control"
-            class="md:hidden absolute w-8 h-8 top-4 left-5 z-20 opacity-0 cursor-pointer" />
-
-        <div
-            class="flex justify-center items-center md:hidden absolute top-4 left-5 w-8 h-8 group-has-checked:hidden pointer-events-none">
-            <i class="fa-solid fa-bars text-white text-2xl"></i>
-        </div>
-
-        <div
-            class="hidden md:hidden absolute top-4 left-5 w-8 h-8 group-has-checked:flex group-has-checked:justify-center group-has-checked:items-center pointer-events-none">
-            <i class="fa-solid fa-xmark text-white text-2xl"></i>
-        </div>
-
-        <ul class="flex flex-col md:flex-row gap-6 md:gap-8 justify-center items-center absolute md:static top-20 left-1/2 -translate-x-1/2 md:translate-x-0 w-[90%] md:w-full bg-[#333]/95 md:bg-transparent rounded-3xl py-8 md:py-0 transition-all duration-300
-
-        opacity-0 pointer-events-none scale-95
-
-        md:opacity-100 md:pointer-events-auto md:scale-100
-
-        group-has-checked:opacity-100
-        group-has-checked:pointer-events-auto
-        group-has-checked:scale-100">
-
-            <li>
-                <a href="#home"
-                    class="link_btn uppercase hover:bg-[#9e2a3a] p-3 rounded-full text-[12px] transition ease-in-out">
-                    <i class="fa-solid fa-home"></i>
-                    Home
-                </a>
-            </li>
-
-            <li>
-                <a href="#projects"
-                    class="link_btn uppercase hover:bg-[#9e2a3a] p-3 rounded-full text-[12px] transition ease-in-out">
-                    <i class="fa-solid fa-laptop-code"></i>
-                    Projetos
-                </a>
-            </li>
-
-            <li>
-                <a href="#work"
-                    class="link_btn uppercase hover:bg-[#9e2a3a] p-3 rounded-full text-[12px] transition ease-in-out">
-                    <i class="fa-solid fa-briefcase"></i>
-                    Experiência
-                </a>
-            </li>
+    <body>
+        <main class="screen relative flex h-screen w-full flex-col justify-between bg-[linear-gradient(62deg,#181719_0%,#3a3d40_100%)]">
+            <aside class="relative flex flex-1 flex-col items-center justify-center p-5 lg:items-end lg:justify-start">
+                <div class="top-3 left-3 max-w-88 bg-[#eae672] p-5 text-center shadow-xl lg:absolute">
+                    <h1 class="text-2xl">
+                        Olá! Meu nome é <strong>Alfredo</strong>
+                        <span class="block text-lg">Sou um desenvolvedor <strong>Front-End</strong></span>
+                    </h1>
+                    <div class="mt-7 flex flex-wrap items-center justify-center gap-3 text-[32px]">
+                        <p>
+                            <i class="fa-brands fa-js" title="JavaScript"></i>
+                        </p>
+                        <p>
+                            <i class="fa-brands fa-typescript" title="TypeScript"></i>
+                        </p>
+                        <p><i class="fa-brands fa-vuejs" title="Vue"></i></p>
+                        <p><i class="fa-brands fa-php" title="PHP"></i></p>
+                        <p>
+                            <i class="fa-brands fa-bootstrap" title="Bootstrap"></i>
+                        </p>
+                        <p>
+                            <i class="fa-brands fa-tailwind-css" title="Tailwind CSS"></i>
+                        </p>
+                        <p>
+                            <i class="fa-brands fa-postgresql" title="PostgreSQL"></i>
+                        </p>
+                        <p>
+                            <i class="fa-brands fa-docker" title="Docker"></i>
+                        </p>
+                    </div>
+                </div>
 
                 <button
                     data-modal="work"
