@@ -220,80 +220,23 @@ function renderContent(id) {
     }
 }
 
-class ProjectComponent extends BaseComponent {
-    renderItem(item) {
-        const card = this.createCard('card__project transition duration-300 ease-in-out hover:outline-2 hover:outline-offset-2 hover:outline-[#9e2a3e] focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#9e2a3e]');
-        const content = this.createContent('card__content h-full p-6');
-        const stackHTML = item.stack.map(tech => `<span class="badge">${tech}</span>`).join('');
-
-        content.innerHTML = `
-              <a class="flex flex-col gap-3 h-full items-center lg:items-start focus:outline-none" href="${item.link}" title="${item.name}" target="_blank" rel="noopener noreferrer">
-                <div class="card__project-img">
-                  <img class="aspect-square object-cover" src="/portfolio/images/projects/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" />
-                </div>
-                <div class="card__project-info flex flex-col justify-around h-full">
-                  <h2 class="text-3xl text-[#9e1a3e] font-bold">${item.name}</h2>
-                    <p>${item.inst}</p>
-                    <p>${item.desc}</p>
-                  <div class="stack flex flex-wrap gap-5 mt-6 justify-center lg:justify-start">
-                    ${stackHTML}
-                  </div>
-                </div>
-               </a>
-              <span class="icon-hover absolute right-0 top-0 me-6 mt-6"><i class="fa-solid fa-code fa-2xl text-[#9e2a3e]"></i></span>
-        `;
-
-        card.appendChild(content);
-        return card;
-    }
+function bringToFront(id) {
+    const window = openWindows.get(id)
+    if (!window) return
+    topZ++
+    window.style.zIndex = topZ
+    updateActiveButton(id)
 }
 
-class WorkComponent extends BaseComponent {
-    renderItem(item) {
-        const card = this.createCard('card__work');
-        const content = this.createContent('card__content h-full p-6');
-        const skillsHTML = item.skills.map(tech => `<span class="badge bg-[#303841]">${tech}</span>`).join('');
-        const linksHTML = item.links.map(link => `<a class="button button__link" target="_blank" rel="noopener noreferrer" href="${link.url}" title="${link.title}">${link.title}</a>`).join('');
-
-        content.innerHTML = `
-            <div class="flex flex-col lg:flex-row items-center lg:items-start gap-3">
-                <div class="w-30 min-w-30 h-30">
-                    <img class="w-full h-full rounded-2xl aspect-square object-cover" src="/portfolio/images/work/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" width="150" height="150" />
-                </div>
-              <div>
-                <h2 class="my-4 text-[24px] font-bold">${item.name} <span class="block font-light text-lg italic">${item.ocupation}</span> </h2>
-                <p>${item.description}</p>
-              </div>
-            </div>
-            <div class="stack flex flex-wrap gap-5 mt-6 justify-center lg:justify-start">
-                ${linksHTML}
-            </div>
-            <div class="stack flex flex-wrap gap-5 mt-6 justify-center lg:justify-start">
-              ${skillsHTML}
-            </div>
-        `;
-
-        card.appendChild(content);
-        return card;
-    }
+function updateActiveButton(id) {
+    document.querySelectorAll('[data-modal]').forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.modal === id)
+    })
 }
 
-class EducationComponent extends BaseComponent {
-    renderItem(item) {
-        const card = this.createCard('card__education text-center lg:text-start lg:w-150 mx-auto border-y-1 border-[#333] my-8 p-3');
-        const content = this.createContent();
-
-        content.innerHTML = `
-            <div class="flex flex-col lg:flex-row items-center gap-4">
-                <div class="bg-white rounded-full">
-                    <img src="/portfolio/images/education/${item.img}.png" title="Logo ${item.name}" alt="Logo ${item.name}" width="150" height="150" />
-                </div>
-                <div>
-                    <h2 class="text-bold text-xl">${item.name}</h2>
-                    <p>${item.course}</p>
-                </div>
-            </div>
-        `;
+function closeWindow(id) {
+    const win = openWindows.get(id)
+    if (!win) return
 
     openWindows.delete(id)
 
