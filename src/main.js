@@ -31,7 +31,8 @@ const work = [
     {
         img: 'logo-phd',
         name: 'PHD do Brasil',
-        description: 'Desenvolver interfaces de usuário utilizando Nuxt e Vue.js',
+        description:
+            'Responsável por criar interfaces de usuário utilizando Vue e/ou Nuxt, utilizando boas práticas de componentização, de padrão de projeto como MVC, de gerenciamento de estado (Pinia) e garantindo qualidade de código seguindo princípios de Clean Code e ferramentas de linting e testes; Prestar manutenção ao front-end do aplicativo interno de vendas; Realizar integrações com aplicações com APIs internas; Criei um formulário de cadastro de pessoa física e jurídica, integrando a uma API interna de busca de CEP e CNPJ com Nuxt e Nuxt UI; Um portal de notícias para comunicação interna com Nuxt, Docker e MySql; Um modelo base em Vue.js para facilitar a criação de landing pages; Contribuí com o LMS interno, ajudando na definição de fluxo de venda de ingressos e com ajustes de layouts em diversas partes do projeto',
         ocupation: 'Desenvolvedor Front-End',
         links: [
             {
@@ -44,7 +45,8 @@ const work = [
     {
         img: 'logo-ideal',
         name: 'Grupo Ideal Trends',
-        description: 'Criação de sites com PHP, JavaScript e Bootstrap focados em SEO.',
+        description:
+            'Reponsável pela criação de sites com foco em SEO, com a média de 8 sites por mês. Criava sites utilizando HTML (semântico), CSS (com o padrão de classes BEM), Bootstrap, PHP e JavaScript quando necessário. De forma geral os sites constituiam em Página inicial, Serviços/Produtos, Blog e uma página de contato. Tanto serviços como as postagens de blog eram salvas no Banco de Dados do site (MySQL); Responsável por alterações em sites, seja para corrigir bugs ou por pedido do cliente final; Responsável pela validação dos site: verifica a qualidade do site usando plataformas de validação interna como o PyValidator, e externas como Google Page Speed Insights, Screaming Frog, Checkbot e o validador do W3C; Integrava com API interna de postagens automáticas de blogs gerados por IA; Integração do formulário de contato a CRMs terceiros: a empresa tinha o proprio CRM, mas ocasionalmente havia pedidos para integração com algum CRM que o cliente final ja possuia.',
         ocupation: 'Analista de Front-End Junior',
         links: [
             {
@@ -61,7 +63,8 @@ const work = [
     {
         img: 'logo-aceda',
         name: 'ACEDA',
-        description: 'Criação de arte para mídias sociais e Desenvolvimento do Site com PHP e Bootstrap',
+        description:
+            'Iniciei como Designer voluntário, onde criava artes para as redes sociais e para peças diversas como folhetos, banners e outros; Após um tempo recebi a oportunidade de auxiliar na manutenção do site, esse foi feito com PHP e Bootstrap; Minhas contrubuições para o site foram melhora na UI e criação de formulários.',
         ocupation: 'Web Designer',
         links: [
             {
@@ -78,7 +81,8 @@ const work = [
     {
         img: 'logo-morgan',
         name: 'Instituto Morgan',
-        description: 'Suporte aos colaboradores, Social Media e apoio a equipe de Comunicação.',
+        description:
+            'Suporte técnico aos colaboradores e usuários; Gerenciamento das plataformas de mídias sociais da empresa e sua presença digital; Apoio a equipe de Comunicação na criação de conteúdos, campanhas e atividades do dia a dia.',
         ocupation: 'Técnico de Suporte Júnior',
         links: [
             {
@@ -91,7 +95,8 @@ const work = [
     {
         img: 'logo-moreno',
         name: 'Moreno Advogados',
-        description: 'Manutenção do site (lowcode), suporte técnico aos colaboradores e alimentação do banco de dados interno.',
+        description:
+            'Era responsável pela criação de CNABs de baixa de parcelas e de renegociação de contrato; Modifiquei uma planilha já existente para reduzir o fluxo de tarefas manuais, antes era necessário abrir a planilha e um editor de texto como o Notepad++ para editar linha por linha. Após as modificações que realizei, era apenas necessário preencher a tabela e clicar no botão "Gerar" que tanto as CNABs de troca e de baixa seriam geradas; Realizei alterações nos sites da empresa, eles eram hospedados na Locaweb e a edição era pelo Editor de Site, uma plataforma lowcode com possibilidade de ter blocos com HTML e CSS; Criava relatórios pelo sistema Datacob. Quando solicitado, gerava 2 ou mais relatórios e, via Excel, juntava-os e gerava tabelas dinâmicas com gráficos para a reunião quinzenal sobre o andamento das renegociações; Criei modelo de mala direta no Word para gerar e-mails de cobrança; Configurava os e-mails dos colaboradores; Prestava apoio técnico a equipe.',
         ocupation: 'Estágio',
         links: [
             {
@@ -120,6 +125,7 @@ const education = [
         course: 'Técnico de Informática Integrado ao Ensino Médio',
     },
 ]
+
 const personal_info = [
     {
         icon: 'fab fa-github',
