@@ -29,7 +29,7 @@ export const projects = [
 
 export const work = [
     {
-        img: 'phd',
+        img: 'logo-phd',
         name: 'PHD do Brasil',
         description:
             'Responsável por criar interfaces de usuário utilizando Vue e/ou Nuxt, utilizando boas práticas de componentização, de padrão de projeto como MVC, de gerenciamento de estado (Pinia) e garantindo qualidade de código seguindo princípios de Clean Code e ferramentas de linting e testes; Prestar manutenção ao front-end do aplicativo interno de vendas; Realizar integrações com aplicações com APIs internas; Criei um formulário de cadastro de pessoa física e jurídica, integrando a uma API interna de busca de CEP e CNPJ com Nuxt e Nuxt UI; Um portal de notícias para comunicação interna com Nuxt, Docker e MySql; Um modelo base em Vue.js para facilitar a criação de landing pages; Contribuí com o LMS interno, ajudando na definição de fluxo de venda de ingressos e com ajustes de layouts em diversas partes do projeto',
@@ -139,7 +139,7 @@ export const personal_info = [
     },
     {
         icon: 'fab fa-linkedin',
-        link: 'https://www.linkedin.com/in/alfredoperesmarvulle-87920a1b7/',
+        link: 'https://www.linkedin.com/in/alfredo-marvulle/',
         name: 'LinkedIn',
     },
     {

@@ -7,6 +7,9 @@
     cursor: pointer;
     transition: 0.3s all;
   }
+  a{
+      transition: 0.3s all;
+  }
 }
 
 /* BODY */
@@ -80,7 +83,7 @@ desktop-manager {
 
 /* CARDS */
 .content {
-  @apply my-4 flex flex-col flex-wrap items-center gap-4 rounded-sm bg-white py-5 lg:flex-row;
+  @apply my-4 flex flex-col flex-wrap items-center gap-4 rounded-sm bg-white py-5 lg:flex-row lg:flex-nowrap;
 }
 .content img {
   @apply h-40 w-40 object-cover p-4;
@@ -116,14 +119,13 @@ desktop-manager {
   font-size: 12px;
 }
 
+/* CONTACT */
 .content__contact {
   @apply relative mx-auto my-5 flex h-20 w-80 flex-col items-center justify-center gap-3 rounded-xl bg-white transition-all duration-300 hover:text-[#9e2a3a];
 }
-
 .content__contact i {
   @apply text-2xl;
 }
-
 .content__contact a:after {
   content: "";
   position: absolute;
