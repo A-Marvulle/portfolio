@@ -139,7 +139,7 @@ export const personal_info = [
     },
     {
         icon: 'fab fa-linkedin',
-        link: 'https://www.linkedin.com/in/alfredoperesmarvulle-87920a1b7/',
+        link: 'https://www.linkedin.com/in/alfredo-marvulle/',
         name: 'LinkedIn',
     },
     {
